@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table style="border-collapse: collapse;">
+
+        <colgroup>
+            <col width = 50%>
+        </colgroup>
+
+        <thead>
+            <tr style="border:1px solid #ccc">
+                <th style="border:1px solid #ccc">번호</th>
+                <th style="border:1px solid #ccc">상품명</th>
+                <th style="border:1px solid #ccc">개수</th>
+                <th style="border:1px solid #ccc">가격</th>
+            </tr>
+        </thead>
+             <tbody>
+            <tr>
+                <td style="border:1px solid #ccc">1</td>
+                <td style="border:1px solid #ccc">콜라</td>
+                <td style="border:1px solid #ccc">2</td>
+                <td style="border:1px solid #ccc" rowspan="2">1000원</td>
+            </tr>
+                <tr>
+                    <td style="border:1px solid #ccc">2</td>
+                    <td style="border:1px solid #ccc">사이다</td>
+                    <td style="border:1px solid #ccc">3</td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #ccc">2</td>
+                    <td style="border:1px solid #ccc">환타</td>
+                    <td style="border:1px solid #ccc">3</td>
+                    <td style="border:1px solid #ccc">400원</td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #ccc">총금액</td>
+                    <td style="border:1px solid #ccc" colspan="3">6200원</td>
+                </tr>
+            </tbody>
+    </table>
+        
+               
+            
+
+            <hr>
+        <table>
+            <colgroup>
+                <col width = 50%>
+            </colgroup>
+            <tr>
+                <th scope="col">구분</th>
+                <th scope="col">중간고사</th>
+                <th scope="col">기말고사</th>
+            </tr>
+            <tr>
+                <th scope="row">전공</th>
+                <td scope="row">A+</td>
+                <td scope="row">B+</td>
+            </tr>
+            <tr>
+                <th scope="row">교양</th>
+                <td scope="row">C+</td>
+                <td scope="row">B+</td>
+            </tr>
+    </table>
+</body>
+</html>
