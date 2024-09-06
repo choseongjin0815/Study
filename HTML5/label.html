@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이블</title>
+</head>
+<body>
+    <form action="#">
+        <label>
+            아이디 : <input type="text">
+        </label>
+        <br>
+        <label>
+            비밀번호 : <input type="text">
+        </label>
+        <!-- 이렇게 짜면 비밀번호 안됨 레이블은 1대1이다.
+        <label>
+            아이디 : <input type="text">
+            비밀번호 : <input type="text">
+        </label> -->
+        <hr>
+        <div>
+            <!-- 이게 더 많이 쓰이는 형태 -->
+            <label for="id">아이디 : </label>
+            <input type="text" id="id">
+        </div>
+        <div>
+            <label>비밀번호 : </label>
+            <input type="text" id="pwd">
+        </div>
+        <div>
+            <label for="textarea">문단</label>
+            <textarea id="textarea" rows="3" cols="20"></textarea>
+        </div>
+    </form>
+</body>
+</html>
