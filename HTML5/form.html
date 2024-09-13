@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM 요소</title>
+
+    <!-- <style>
+        input {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style> -->
+</head>
+<body>
+    <!-- 반드시 form태그안에 전송하고 싶은 내용을 작성해야함 form이 
+     여러개 있을 경우에는 id등으로 구분을 해줘야함 id의 값은 페이지 내에서 유니크해야함.
+     전송을 하려면 name이라는 속성이 지정되어야함
+     GET은 요청을 전송할 때 필요한 데이터를 Body에 담지 않고 쿼리스트링을 통해 전송한다.
+출처: https://while1.tistory.com/225 [<꼬물꼬물 개발일기/>:티스토리]
+     get 방식이 url에 데이터가 보여진다. 데이터를 전송할 수 있는 용량이 제한됨 
+     post방식은 body에 데이터를 넣어서 보내는 방식
+     GET방식은 URL에 데이터를 붙여서 전송하는 반면에 POST방식은 BODY에 데이터를 넣어서 전송합니다.-->
+
+
+     <!--GET 방식은 URL을 통해 모든 파라미터를 전달하기 때문에 주소창에 전달 값이 노출되고,
+         URL 길이가 제한이 있기 때문에 전송 데이터 양이 한정되어 있고
+         GET과 다르게 POST 방식의 요청은 HTTP Body에 데이터(리소스)를 포함해서 전달하고,
+         웹 브라우저에는 직접적으로 파라미터가 노출되지 않고 길이 제한도 없습니다.-->
+     <!-- 
+    form 요소의 속성 값
+        id : 페이지 내에서 유일한 값
+        name : 요소이름(페이지 내에서 중복 가능 하지만 가급적 유일한 값)
+        method : 전송방식 - 기본값 - get(기본값), post
+        action : 데이터를 전송받을 대상 URL
+        
+        URL : uniform resouce location 네트워크 상에서 자원이 어디있는지 확인하기 위한 리소스 주소
+        URI : uniform resouce indicator  
+        
+    form 요소의 하위 엘리먼트 종류
+        -input 태그 : 한 줄 짜리 입력 요소에 사용
+            -type : input 태그에서 처리할 데이터의 종류 디폴트는 text
+            - id : 페이지 내에서 유일한 값 - 주로 스크립트나 css에서 사용
+            -name : 입력 요소의 이름, 데이터 전송시 필수
+            -value : 입력 요소의 값
+            -required : 반드시 입력해야 하는 값
+            -readonly : 읽기전용 - 입력 불가
+        -text : 한줄짜리 문자값을 전송
+        -maxlength : 입력 가능한 최대값
+        -minlength : 입력 가능한 최소값
+
+        -fieldset : 폼 요소를 그룹으로 묶는 태그
+        - -->
+    <form action="https://www.naver.com">
+        <input type="text" maxlength="3" value="텍스트">
+        <input type="password" maxlength="5" value="비밀번호">
+        <input type="tel" value="전화번호">
+        <input type="number" value="숫자">
+        <input type="url" value="URL">
+        <input type="email" value="이메일">
+        <input type="search">
+        <input type="radio">radio
+        <input type="checkbox">check
+        <input type="file">파일선택
+        <input type="date">날짜
+        <input type="datetime-local">시간
+        <input type="month">월
+        <input type="week">주
+        <input type="time">시간
+        <input type="range">범위
+        <input type="color">색상
+        <input type="image">이미지
+        <input type="submit">전송 
+        <!-- submit버튼의 기본동작성은 페이지 이동 -->
+        <input type="reset">
+        <!-- 각폼의 하위요소에 대한 사용법들 알아야 함 시험문제 -->
+        <br>
+        <!-- <label for="test">test</label> -->
+        <label>아이디 : <input type="text" id="test"></label>
+    </form>
+</body>
+</html>
