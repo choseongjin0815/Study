@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>좋아하는 과일</legend>
+        <label for="banana">바나나</label>
+        <!-- 서버쪽에서 요청을 할때는 name을 요청한다.
+          fruits를 request, id는 css등의 관련 
+        fruits -> banana,apple,watermelon
+        request는 id가아니라 name으로 받는다. name은 전송용도 -->
+        <input type="checkbox" id="banana" name="fruits" value="바나나">
+        <label for="apple">사과</label>
+        <input type="checkbox" id="apple" name="fruits" value="사과" checked>
+        <label for="strawberry">딸기</label>
+        <input type="checkbox" id="strawberry" name="fruits" value="딸기" checked>
+        <label for="watermelon">수박</label>
+        <input type="checkbox" id="watermelon" name="fruits" value="수박">
+    </fieldset>
+    <fieldset>
+        <legend>좋아하는 과일</legend>
+        <label for="banana2">바나나</label>
+        <!-- radio는 이름이 같튼 것 끼리만 중복체크가 안됨-->
+        <input type="radio" id="banana2" name="fruits2" value="바나나" checked>
+        <label for="apple2">사과</label>
+        <input type="radio" id="apple2" name="fruits2" value="사과" >
+        <label for="strawberry2">딸기</label>
+        <input type="radio" id="strawberry2" name="fruits2" value="딸기" >
+        <label for="watermelon2">수박</label>
+        <input type="radio" id="watermelon2" name="fruits2" value="수박">
+    </fieldset>
+
+    <fieldset>
+        <legend>데이터리스트</legend>
+        <input type="text" list="data_list">
+        <datalist id="data_list">
+            <option value="서버로 넘길 값1">옵션1</option>
+            <option value="서버로 넘길 값2">옵션2</option>
+        </datalist>
+    </fieldset>
+
+    <fieldset>
+        <legend>플레이스 홀더</legend>
+        <div>
+            <label for="id">아이디 : </label>
+            <input type="text" name="id" id="id" value="" placeholder="아이디를 입력하세요" required>
+        </div>
+        <div>
+            <label for="pwd">비밀번호 : </label>
+            <input type="text" name="pwd" id="pwd" value="" placeholder="비밀번호를 입력하세요">
+        </div>
+    </fieldset>
+    <button type="submit">확인</button>
+</body>
+</html>
