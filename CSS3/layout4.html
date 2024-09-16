@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            width: 300px;
+            height: 200px;
+            background-color: aliceblue;
+            border: 1px solid #ff0000;
+        }
+        #static {
+            position : static;
+        }
+        #p1 {
+            position: relative;
+        }
+        #p2 {
+            position: relative;
+            left: 100px;
+            /* 바로앞에 있는 태그보다 -100px만큼 감 */
+            top: -100px;
+            
+        }
+        #p3 {
+            position: fixed;
+            right: 50px;
+            width: 300px;
+            height: 300px;
+            top: 5px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <p id="static">static</p>
+    <p id="p1">미국 검찰이 중앙정보국(CIA) 분석관 출신의 대북전문가 수미 테리 미국 외교협회(CFR)
+         선임연구원을 기소한 가운데, 31쪽에 달하는 공소장을 공개했다</p>
+    <p id="p2">17일(현지 시각) 뉴욕타임스(NYT)에 따르면 이 공소장에는 테리 연구원이
+             10년이 넘는 시간 동안 한국의 국가정보원 등으로부터 받은 일종의 뇌물 내역과
+              한국 정부 관계자들과 주고 받은 문자 등이 담겨있다.</p>
+    <p id="p3">
+            검찰이 테리 연구원을 기소하며 적용한 혐의는 외국대리인등록법(FARA) 위반 혐의다.
+             고가의 금품과 접대를 받고 한국 정부를 위해 활동했으며, 한국 정부의 대리인으로 활동하면서
+              미 법무부에 관련 사실을 신고하지 않아 FARA를 위반했다는 것이다.</p>
+</body>
+</html>
