@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+    <style>
+        div {
+            padding: 2px;
+            margin: 10px;
+
+        }
+        #TOP {
+            border: 1px solid red;
+            height: 100px;
+            padding: auto;
+        }
+        /* block요소가 먼저 자리잡고 float속성 */
+        #menu1 {
+            background-color: #ffff00;
+            float: left;
+        }
+        #menu2 {
+            background-color: #003cff;
+            float: left;
+        }
+        #menu3 {
+            background-color: #00ff15;
+            float: left;
+/* float속성이 없으면 디폴트로 블록속성 */
+        }
+        #menu4 {
+            background-color: violet;
+            float: left;
+            /* clear: left; */
+            
+        }
+        #menu5 {
+             clear: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="TOP">
+        <div id="menu1">메뉴 1</div>
+        <div id="menu2">메뉴 2</div>
+        <div id="menu3">메뉴 3</div>
+        <div id="menu4">메뉴 4</div>
+        <div id="menu5">메뉴 5</div>
+    </div>
+    <div id="menu1">메뉴 1</div>
+    <div id="menu2">메뉴 2</div>
+    <div id="menu3">메뉴 3</div>
+    <div id="menu4">메뉴 4</div>
+    <!-- <div id="menu5"></div> -->
+    <div id="TOP"></div>
+    </div>
+    
+</body>
+</html>
