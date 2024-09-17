@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경색</title>
+    <style>
+        div {
+            background-color: orange;
+            border: 1px dashed black;
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            height: 200px;
+            float: left;
+        }
+        #box1 {
+            background-clip: border-box;
+        }
+        #box2 {
+            background-clip: padding-box;
+        }
+        #box3 {
+            background-clip: content-box;
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>
+            배경색 속성
+            <ul>
+                <li>background-color: t새<색상값></li>
+                <li>background-color 속성</li>
+                <li>해당 요소의 배경색 지정</li>
+                <li>16진수, rgb, rgba, 색상값 사용가능</li>
+                <li>배경색은 상속되지 않는다.</li>
+            </ul>
+            <div style="width: 100px; height: 40px; background-color: #ff0000;">
+                <p>배경색은 상속되지 않습니다.<br>
+                투명한 영역에서는 상위 요소를 상속 받은 것처럼 보이지만,<br>
+                 하위 요소가 투명하기 때문에 상위 요소의 색상이 보일 뿐 입니다.
+                </p>
+            </div>
+        </li>
+        <li>
+            background-clip 속성
+            <ul>
+                <li>background-clip:border-box | padding-box | content-box</li>
+                <li>배경의 영역이 어디까지 인지를 결정</li>
+            </ul>
+        </li>
+    </ol>
+    <!-- <div style="width: 300px; height: 20px; background-color: #ff0000;">
+        <p>배경색은 상속되지 않습니다.<br>
+        투명한 영역에서는 상위 요소를 상속 받은 것처럼 보이지만,<br>
+         하위 요소가 투명하기 때문에 상위 요소의 색상이 보일 뿐 입니다.
+        </p>
+    </div> -->
+    <div id="box1">
+        <h1>background-clip으로 설정</h1>
+        <p>배경의 영역이 border 까지 입니다.</p>
+    </div>
+    <div id="box2">
+        <h1>background-padding으로 설정</h1>
+        <p>배경의 영역이 padding 까지 입니다.</p>
+    </div>
+    <div id="box3">
+        <h1>background-content으로 설정</h1>
+        <p>배경의 영역이 content 까지 입니다.</p>
+    </div>
+   
+    
+</body>
+</html>

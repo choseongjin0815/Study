@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경이미지</title>
+    <style>
+        /* width height값을 잡아줘야 이미지가 나온다. */
+        div {
+            background-image: url('images/3837136.png');
+            width: 400px;
+            height: 400px;
+            background-repeat: repeat-y;
+        }
+
+        body {
+            background-image: url('images/wrtFileImageView.jpg');
+            /* /* background-repeat: repeat;  페이지의 용량을 줄여주는 역할도 함.* / */
+            background-size: cover;
+        }
+
+        #area1 {
+            background-image: url('images/3837136.png');
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>
+            bakcground-image 속성
+            <ul>
+                <li>배경 이미지 파일의 경로를 지정</li>
+                <li>기본적으로 이미지의 전체 사이즈가 지정</li>
+                <li>url함수 이용하여 지정
+                    -이미지 태그의 경로 지정과 동일
+                </li>
+            </ul>
+        </li>
+        <li>
+            backgorund-repeat 속성
+            <ul>
+                <li>background-repeat:repeat | repeat-x | repeat-y | no-repeat</li>
+                <li>배경 이미지의 반복 출력 속성 값을 설정</li>
+                <li>영역이 이미지보다 클때 - 이미지 반복</li>
+                <li>영역이 이미지보다 작을 때 - 영역 크기만큼 잘려 보임</li>
+                <li>repeat : 해당 영역이 가득 찰때까지 배경의 가로 세로를 </li>
+                <li>repeat-x : 해당 영역이 가득 찰때까지 배경의 가로로 반복</li>
+                <li>repeat-y : 높이와 같아질 때까지 이미지를 세로로 반복</li>
+                <li>no-repeat : 반복없이 한번만 보여줌</li>
+                
+            </ul>
+        </li>
+        <li></li>
+    </ol>
+    <img src="images/3837136.png" width="200px">
+    <hr>
+    <div id="area1">
+        
+    </div>
+</body>
+</html>
