@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .grad1 {
+            background: red;
+            background: radial-gradient(white,yellow,red);
+        }
+        .grad2 {
+            background: red;
+            background: radial-gradient(circle, white, yellow, red);
+        }
+        ul > li {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            border: 1px solid blue;
+            margin: 10px;
+        }
+        #li1 {
+            background: green;
+            background: radial-gradient(circle closest-side at 30% 40%, white, yellow, green );
+        }
+        #li2 {
+            background: green;
+            background: radial-gradient(circle closest-corner at 30% 40%, white, yellow, green );
+        }
+        #li3 {
+            background: green;
+            background: radial-gradient(circle farthest-side at 30% 40%, white, yellow, green );
+        }
+        #li4 {
+            background: green;
+            background: radial-gradient(circle farthest-corner at 30% 40%, white, yellow, green );
+        }
+        #div1 {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 10px;
+            background: blue;
+            background: radial-gradient(circle at 30% 40%, white, blue );
+        }
+        #div2 {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            margin: 10px;
+            background: yellow;
+            background: radial-gradient( white, orange,blue );
+        }
+        #div3 {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            margin: 10px;
+            background: yellow;
+            background: radial-gradient( white, orange 10%, blue 50% );
+        }
+        #div4 {
+            width: 80px;
+            height: 20px;
+            border-radius: 10px;
+            margin: 10px;
+            background: red;
+            background: repeating-linear-gradient(yellow, yellow 1px, red 1px, red 2px);
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>
+            원형 그라데이션
+        </li>
+        <ol>
+            <li>radial-gradient(<모양> <크기> at 위치, <색상 중지점>, [<중지점>,,,,,])</li>
+            <li>원이나, 타원 중심부터 동심원을 그리면서 바깥방향으로 색상이 바뀌는 그라데이션</li>
+            <li>색상 시작하는 점 원 중심, 모양 지정</li>
+        </ol>
+        <li>모양 : circle(원형), ellipse(타원형)-ellipse</li>
+        <li>
+            위치 : 그라데이션 시작 위치
+            <ol>
+                <li>모양 크기 at 위치값</li>
+                <li>위치값 : 백분율, 키워드</li>
+                <li>수평 : left, center, right</li>
+                <li>수직 : top, center, bottom</li>
+            </ol>
+        </li>
+        <li>
+            색상 중지점
+            <ol>
+                <li>색상이 바뀌는 지점에서 노출될 색상, 구분하여 설정</li>
+                <li>색상이 변경되는 지점 설정 가능</li>
+                <li></li>
+            </ol>
+        </li>
+    </ol>
+    <div class="grad1"></div>
+    <div class="grad2"></div>
+
+    <ul>
+        <li id="li1"></li>
+        <li id="li2"></li>
+        <li id="li3"></li>
+        <li id="li4"></li>
+    </ul>
+    <div id="div1"></div>
+
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+    <div></div>
+
+</body>
+</html>
