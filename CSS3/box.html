@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 모든 요소 하나하나 */
+        /* body *{
+            border: 1px solid blue;
+             위아래 10px 좌우 20px 
+            margin: 10px 20px;
+             span은 width 줘봤자 소용없음 논블럭 태그 
+         width: 400px; 
+        }
+        .acc {
+            color: orange;
+            font-weight: bold;
+            border: dotted 2px red;
+        } */
+        .first {
+            border: 1px solid red;
+            margin-bottom : 20px;
+        }
+        .second {
+            border : dotted 1px blue;
+            margin-top: 30px;
+        }
+
+        #box1 {
+            border: 1px red;
+            border-style: solid;
+            margin: 10px 15px;
+            padding : 10px;
+            width: 200px;
+        }
+        #box2 { 
+            border-style: dotted;
+            margin: 0px 15px;
+            padding : 20px;
+        }
+        #box3 { 
+            border-style: dashed;
+            margin: 0px 15px;
+            padding : 30px;
+        }
+        /* 같은 이름이면 제일 마지막의 css가 덮어씌움 */
+        #box1 {
+            border: 2px solid orange;
+            width: 400px;
+            margin: 0;
+        }
+        /* 먼저 공통된 내용을 작성하고 그다음에 세부 사항 */
+        /* 배경색 등은 상속되지 않음 */
+        .box {
+            border: 1px solid red;
+            margin: 0;
+            border-radius: 50%;
+        }
+        #box1 {
+            margin: 10px 15px;
+            padding: 10px;
+            width: 200px
+        }
+        .member-box1 {
+            margin: 10px 15px;
+            padding: 20px;
+        }
+        #b1 {
+            border: 1px solid orange;
+            margin: 0px;
+            padding: 10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>박스 모델</h1>
+
+    <p>p 태그의 박스모델1</p>
+    <p>p 태그의 박스모델</p>
+    <div id="box1" style = "width: 100px;">
+        박스 모델의 실선 테두리
+    </div>
+    <div id="box2" class="box" style="width: 100px; height: 100px;">
+        박스 모델의 파선 테두리
+    </div>
+    <div id="box3">
+        박스 모델의 점선 테두리
+    </div>
+    <div id="b1">
+
+    </div>
+    <!-- <div>17일(현지 시각) <span class="acc">뉴욕타임스(NYT)</span>뉴욕타임스(NYT) 따르면 이 공소장에는 테리 연구원이 10년이 넘는 시간 동안 한국의 국가정보원 등으로부터 받은 일종의 뇌물 내역과 한국 정부 관계자들과 주고 받은 문자 등이 담겨있다. 특히 미국 검찰은 한국 측으로 부터 받은 금품 내역을 비롯해 그가 어떤식으로 접대를 받았는지 사진까지 붙여 적나라하게 담았다.</div>
+    <p>박스 모델의 사용법에 대하여 알아보겠습니다.</p> 
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!-- 웹에서 경로의 시작점이 되는 애는 루트 프로젝트의 시작 부분, 디렉토리 표기법 절대경로
+절대경로와 상대경로 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <!-- 내부 스타일 시트 -->
+    <style>
+        div {
+            color: blue;
+            color: #ff0000;
+        }
+        /* 태그 지정자 */
+        h1 {
+            font-size: 24px; 
+            color: red;
+        }
+        .fontSize {
+            font-size: 34px;
+        }
+        .list {
+            list-style: upper-roman;
+        }
+    </style>
+</head>
+<body>
+    <ol class="list">
+        <li>일</li>
+        <li>이</li>
+        <li>삼</li>
+    </ol>
+    <img src="/images/wrtFileImageView.jpg" alt="절대경로">
+    <br>
+    <img src="./images/wrtFileImageView.jpg" alt="상대경로">
+    <div>
+        <!-- h1 디폴트로 나오는건 브라우저 기본 스타일 -->
+    <h1 class="fontSize" style="color: blue">CSS 기본</h1>
+    </div>
+    <!-- 제일 밖에 있는 놈을 안에 있는 놈이 물려받는다. -->
+    <div>
+        CSS 기본
+    </div>
+    
+</body>
+</html>
