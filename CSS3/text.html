@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: "맑은 고딕", 돋움, 굴림;
+        }
+        ul>li{
+            font-size: 12px;
+            font-weight: bold;
+            font-family: cursive;
+        }
+
+        .font-kyeword1 {
+            font-size: xx-small;
+        }
+        .font-kyeword2 {
+            font-size: 1.2em;
+        }
+        .font-normal {
+            font-style: normal;
+        }
+        .font-italic {
+            font-style: italic;
+        }
+        .font-weight {
+            font-family: "맑은 고딕", 돋움, 굴림;
+            font-weight: normal;
+            font-size: 13px;
+        }
+        .font-weight1 {
+            font-weight: normal;
+        }
+        .font-weight2 {
+            font-weight: bold;
+        }
+        .font-weight3 {
+            font-weight: lighter;
+        }
+        .font-weight4 {
+            font-weight: bolder;
+        }
+        .font-weight100 {
+            font-weight: 100;
+        }
+        .font-weight900 {
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>
+            font-family 속성
+            <ul>
+                <li>웹 문서에서 사용할 글꼴 지정</li>
+                <li>&lt;body&gt; 태그를 비롯해 p 태그나, 
+                    Hn태그처럼 텍스트를 사용하는 요소</li>
+                <li>지정한 글꼴이 없을 경우, 두 번째, 세 번째 
+                    지정할 글꼴 순서로 적용,
+                    없을 경우 시트템 기본 폰트가 적용됨</li>
+                <li>둘 이상의 글꼴 이름을 지정할 경우 쉼표(,)로 구분</li>
+                <li>body 태그 스타일에서 한 번 정의하면 문서 전체에 적용
+                    문서 안에서 모든 자식 요소에 같은 속성이 적용
+                </li>
+            </ul>
+        </li>
+        <li>
+            font-size 속성
+            <ul>
+                <li>font-size: {<절대크기>| <상대크기> | <크기> | <백분율> }</li>
+                <li>절대크기 : 브라우저에서 지정한 크기</li>
+                <li>상대크기 : 부모 요소 기준</li>
+                <li>크기 : 브라우저 상관없이 글자 크기 직접 지정</li>
+                <li>백분율 : 부모 요소의 글자 크기 기준 백분율(%)로 지정</li>
+            </ul>
+        </li>
+        <li>키워드를 사용한 글자 크기 지정
+            <ul>
+                <li class="font-kyeword1">xx-Small < x-Small < Small < medium < large < x-large < xx-large</li>
+                <li class="font-kyeword2">단위를 사용해 글자 크기 지정</li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </li>
+        <li>
+            font-style 속성
+            <ol>
+                <li class="font-normal">font-style : normal | italic | oblique</li>
+                <li class="font-normal"> normal : 기본값으로 일반적인 형태로 표시</li>
+                <li class="font-italic">italic : 이탤릭체로 표시</li>
+            </ol>
+        </li>
+        <li>
+            font-weight 속성
+            <ul class="font-weight">
+                <li>font-weight : normal | bold | bolder | lighter | 100 | ~~ | 900</li>
+                <li>글자 굵기를 조절하는 속성</li>
+                <li class="font-normal">normal : 기본값</li>
+                <li class="font-weight2">bold : 굵게</li>
+                <li class="font-weight4">bolder : 원래보다 더 굵게</li>
+                <li class="font-weight3">lighter : 원래보다 가늘게</li>
+                <li class="font-weight100">100~900 : 가늘게~가장굵게</li>
+            </ul>
+        </li>
+    </ol>
+</body>
+</html>
