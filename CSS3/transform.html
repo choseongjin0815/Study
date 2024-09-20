@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div {
+            float : left;
+            background-color: violet;
+            border: 1px solid red;
+            width: 30px;
+            height: 30px;
+            margin: 30px;
+            
+        } */
+        #div2:hover {
+            transform: skew(-30deg);        
+        }
+        #div3:hover {
+            transform: rotate(40deg);
+            transform-origin: bottom left;
+        }
+        #div3d div {
+            width:100px;
+            height: 100px;
+            float: left;
+            margin: 40px;
+            border: 1px solid red;
+        }
+        #scale3d:hover {
+            transform: scale3d(2, 2, 2);
+        }
+        #translate3d:hover {
+            transform: scale3d(10px, 20px, 20px);
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>변형(transform)</h1>
+    <ol>
+        <li>
+            <ul>
+                <li>변형(transform) : 특정 요소의 크기나 형태, 스타일 등이 바뀌는 것</li>
+                <li>2차원/3차원 변형
+                    <ul>
+                        <li>수평 수직으로 웹 요소를 변형</li>
+                        <li>크기. 각도만 지정</li>
+                        <li>2차원 좌표 사용</li>
+                        <li>확대 축소
+                            <ul>
+                                <li>scale(x,y)-요소를 x,y만큼 확대/축소</li>
+                                <li>scalex(n)</li>
+                                <li>scaley(n)</li>
+                                <li>scale3d(x,y,z) - 요소를 x,y,z축으로 각각 x,y,z 만큼 확대</li>
+                            </ul>
+                        </li>
+                        <li>기울이기
+                            <ol>
+                                <li>skew(xdeg,ydeg)</li>
+                                <li>skew(x)</li>
+                                <li>skewY(ydeg)</li>
+                            </ㅑ>
+                        </li>
+                    </ul>
+                </li>
+                <li>3차원 변형
+
+                </li>
+                <li>translate함수
+                    <ol>
+                        <li>지정한 방향으로 이동할 거리 지정 후 이동</li>
+                        <li>
+                            <ul>
+                                <li>transform:translate(tx, ty) - x축 방향으로 tx만큼 ,y축 방향으로 ty만큼 이동
+                                    ,ty값을 주지 않으면 0으로 간주
+                                </li>
+                                <li>translate3d(tx, ty, tz)</li>
+                                <li>translateX(tx) - x축 방향</li>
+                                <li>translateY(ty) - y축 방향</li>
+                                
+                                <li>translatye(tz) - z축 방향</li>
+                            </ul>
+                            
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li></li>
+        <li></li>
+        <!-- <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div> -->
+        <div id="div3d">
+            <div id="scale3d"></div>
+            <div id="translate3d"></div>
+        </div>
+    </ol>
+</body>
+</html>
