@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: bgchange;
+            animation-duration: 5s;
+            animation-fill-mode: backwards;
+
+        }
+        @keyframes bgchange {
+            0%{background-color: red;}
+            25%{background-color: orange; border-radius: 50%;}
+            50%{background-color: yellow;}
+            75%{background-color: peachpuff;}
+            100%{background-color: green;}
+        }
+    </style>
+</head>
+<body>
+    <h1>fill-mode</h1>
+    <div></div>
+</body>
+</html>

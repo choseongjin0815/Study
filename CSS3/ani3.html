@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div3 {
+            width: 100px;
+            height: 100px;
+            animation-name: bgchange;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            border-radius: 50%;
+            animation-delay: 4s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes bgchange {
+            0% {background-color: red;}
+            25% {background-color: orange;}
+            50% {background-color: yellow;}
+            100% {background-color: green;}
+            
+        }
+        .div1 {
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin: 50px;
+        }
+        #div1 {
+            background-color: chartreuse;
+            border: 1px solid transparent;
+            animation-name: div1;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+        #div2 {
+            background-color: violet;
+            border: 1px solid transparent;
+            animation-name: div2;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes div1 {
+            from {
+                border: 1px solid transparent;
+            }
+            to {
+                border: 1px solid #000;
+                border-radius : 50%;
+
+            }
+        }
+        @keyframes div2 {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>iteration-count</h1>
+    <div id="container">
+        <div class="div1" id="div1"></div>
+        <div class="div2" id="div2"></div>
+        <div class="div3" id="div3"></div>
+    </div>
+</body>
+</html>
