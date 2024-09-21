@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Math.ceil(올림),floor(내림), max, min, random;
+
+        // let randNum = Math.random();
+        // document.write(randNum);
+
+        //0~44까지 무작위 숫자
+
+        // function getRandNo(max) {
+        //     return Math.floor(Math.random()*max) + 1;
+        // }
+
+        // function lottoNo(min, max) {
+        //     return Math.floor(Math.random()*(max-min) + 1);
+        // }
+        // let lotto = new Array(6);
+        // let same = new Array();
+        // for(let i = 0; i < 6; i++) {
+        //     lotto[i] = lottoNo(1, 45);
+        //     if(i != 0) {
+        //         while(1) {
+        //             if(lotto[i] == lotto[i-1]) {
+        //                 same.push(lotto[i]);
+        //                 // document.write(same[0])
+        //                 lotto[i] = lottoNo(1,45);
+        //             }
+        //             else {
+        //                 break;
+        //             }
+                  
+        //             if((lotto[i] == lotto[i-1])&&(!lotto[i].includes(same))) {
+        //                 break;
+        //             }
+        //             else{};
+        //         }
+        //     }
+        //    document.write(lotto[i] + "<br>");
+        // }
+
+        
+        // for(let i = 0; i < 6; i++) {
+        //     lotto[i] = lottoNo(0, 44);
+           
+        //    document.write(lotto[i] + "<br>");
+        // }
+
+
+        // const rndNo = getRandNo(44);
+        // document.write("random No : " + rndNo + "<br>");
+
+        // let arrScore = [30, 50, 70, 80, 90, 75];
+        // //3가지 for 문을 이용하여, 평균을 구하는 함수를 각각 작성해 보세요.
+
+        // let sum = 0;
+        // let avg = 0
+        // for(let i = 0; i < 6; i++) {
+        //     sum += arrScore[i];
+
+        //     if(i == (arrScore.length - 1)) {
+        //         avg = sum / arrScore.length;
+        //         document.write(avg + "<br>");
+        //     }
+        //     // document.write(sum);
+        // }
+        // document.write("<br>" + sum + "<br><br>") ;
+
+        // let sum1 = 0;
+        // let avg1 = 0;
+
+        // for(els in arrScore) {
+        //     // document.write(arrScore[els]);
+        //     sum1 += arrScore[els];
+        //     // document.write(arrScore.length + "<br>");
+        //     if(els == (arrScore.length-1)) {
+        //         avg1= sum1 / arrScore.length;
+        //         document.write(avg1 + "<br>");
+        //     }
+        // }
+        
+        // let sum3 = 0;
+        // let avg3 = 0;
+        // let cnt = 0;
+        // for(items of arrScore) {
+        //     // document.write(items);
+        //     sum3 += items;
+        //     if(cnt == 5) {
+        //         avg3 = sum3 / arrScore.length;
+        //         document.write(avg3 + "<br>");
+        //     }
+        //     cnt++;
+
+        //     // document.write(sum);
+        // }
+        
+
+        function lottoRandomNumber(min, max) {
+            return Math.floor(Math.random()*(max - min) + 1);
+        }
+        let num = 0;
+        let cnt = 0;
+        let lottocnt = 0;
+        let lottoNum = new Array(6);
+        // document.write(lottoNum.length);
+        while(1) {
+            num = lottoRandomNumber(1, 45);
+            for(let i = 0; i < lottoNum.length; i++) {
+                    if(i == 0 && lottocnt == 0) {
+                        lottoNum[lottocnt] = num;
+                        lottocnt++;
+                        break;
+                    }
+                    else if(lottoNum[i] != num) {
+                        cnt++;
+                        if(cnt == 6) {
+                            lottoNum[lottocnt] = num;
+                            lottocnt++;
+                            cnt = 0;
+                        }
+                    }
+                    else{
+                        break;
+                    }
+                }
+                if(lottocnt == 6) {
+                    for(let j = 0; j < lottocnt; j++) {
+                        document.write(lottoNum[j] + "<br>");
+                    }
+                    break;
+                }
+            }
+    </script>
+</body>
+</html>

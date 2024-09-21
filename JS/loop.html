@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
+</head>
+<body>
+    <ul>
+        <li>for 문
+            <p>for (초기값; 조건; 증가식) {
+                실행문;
+                조건문;
+                반복문;
+                함수;
+                선언문;
+                .....    
+            }</p>
+        </li>
+        <li>초기값 : for 문에서 사용하는 반복 조건값을 초기화</li>
+        <li>조건 : 조건이 true 동안에 for문이 반복</li>
+        <li>증가식 : for문이 반복되는 동안 초기값을 증가시킴</li>
+
+        <p>
+            for(i = 0 ;true;)
+        </p>
+        <p>
+            for(;;) {
+
+            }
+        </p>
+        <p>자바스크립트에서 파라미터 명을 지역변수든 전역변수든 동일한것 사용하지 않는다.</p>
+    </ul>    
+    <ul>
+        <li>while문</li>
+        <li><p>
+            wihle(조건) {<br>
+                실행구문;
+                for문;
+                while문;
+                함수;
+                선언;
+                ...
+                break;
+                continue;
+            } <br>
+            <p>
+                <li>do ~ while문</li>
+                <li>
+                    <p>
+                        do {
+                            <br>
+                        } while(조건);<br>
+
+
+                        for문과 while문은
+                    </p>
+                </li>
+            </p>
+        </p></li>
+        자바스크립트에서 array를 생성하는 방법들?
+    </ul>
+
+    <script>
+        var i = 0;
+        var j = 0;
+        var sum = 0;
+        // for(i = 1; i < 10; i++) {
+        //     sum += i;
+        // }
+        // document.write(sum);
+        
+        // for(i = 1; i < 10; i++) {
+        //     for(j = 1; j < 10; j++) {
+        //         sum = i * j;
+        //         document.write(i + "X" + j + "=" + sum + "<br>");
+        //     }
+        // }
+        // for(;;) {
+        //     document.write("무한루프" + "<br>");
+
+            
+        //     if(i > 10) {break;}
+        //     i++;
+        //     if(i <= 10) {continue;}
+            
+        // }
+        
+        // var i = 0;
+        // for(var i = 0, name = "홍길동", age = 10; i < 10; i++) {
+        //     i++;
+        //     document.write("i: " + i);
+        // }
+        // document.write("i : " + i + "<br>");
+        // document.write("name : " + name + "<br>");
+
+    //     for(i = 1; i < 10; i++) {
+    //         for(j = 1; j < i + 1; j++) {
+    //             document.write("* ");
+    //         }
+    //         document.write("<br>");
+    //     }
+    //     document.write("<br>");
+    //     for(i = 1; i < 10; i++) {
+    //         for(j = 1; j < 10 - i; j++) {
+    //             document.write("* ");
+    //         }
+    //         document.write("<br>");
+    //     }
+
+    //     document.write("\"무궁화\"");
+    //     documnet.write("'무궁호'");
+    //     document.write('"무궁호');
+    //     //템플릿 문자열
+    //     var String = `문자열을 감싸서 입력된 
+    //     형태 그대로
+    //     출력됩니다.
+    //     `;
+    //     var dan = 3;
+    //     var gugu = 9;
+    //     var string  = `$[dan] 곱하기 ${gugu} 은 ${dna * gugu} 입니다.`;
+
+    //     array 
+    //     객체 자료형
+    //     var arrString = ["a", "b", "c"];
+    //     var arr2 = new Array("a", "b", "c");
+
+
+    //     var obj = {
+    //         "키" = 값,
+    //         "키" : {}
+    //         "키" : 값, ,,,,
+    //         "키" : [{}, {}]
+        
+    // }
+    
+    var arr = ["banana", "apple", "strawberry", "peach"];
+    for(var i = 0; i < arr.length; i++) {
+        document.write(`${arr[i]}`);
+    }
+        
+    </script>
+</body>
+</html>

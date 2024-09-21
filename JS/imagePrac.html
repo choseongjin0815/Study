@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            border: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><img src="images/icons8-과거-48.png" class="pic" data-src="images/icons8-과거-48.png" width="100"></li>
+            <li><img src="images/icons8-선물-48.png" class="pic" data-src="images/icons8-선물-48.png" width="100"></li>
+            <li><img src="images/icons8-채워진-스타-48.png" class="pic" data-src="images/icons8-채워진-스타-48.png" width="100"></li>
+        </ul>
+    </div>
+
+    <div id="divImg" style="display: none;">
+        <img src="" id="img2">
+    </div>
+
+    <script>
+        let imgs = document.querySelectorAll(".pic");
+        // document.write(imgs.length)
+        for(i = 0; i < imgs.length; i++) {
+            imgs[i].addEventListener("click", showImg);
+        }
+
+        function showImg() {
+            // console.log(imgSrc);
+            let imgSrc = this.getAttribute("data-src");
+            const divImg = document.getElementById("divImg");
+            // img2.innerHTML = "<img scr=" + imgSrc + "alt=''>"
+            const img2 = document.getElementById("img2");
+            img2.setAttribute("src", imgSrc);
+            divImg.style.display = "block";
+            divImg.onclick = () => {this.style.display='none';};
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form  name="frm" id="frm" action="" method="post" >
+            <fieldset>
+                <div>
+                    <legend>회원가입</legend>
+                    <label for="name">이름</label>
+                    <input type="text" id="name" value=""maxlength="20" placeholder="이름을 입력하세요">
+                </div>
+                
+                <div>
+                    <label for="name">아이디</label>
+                    <input type="text" id="id" value=""maxlength="" placeholder="아이디를 입력하세요">
+                    <br> 
+                </div>
+                <div>
+                    <label for="sex_0">성별</label>
+                    <input type="radio" id="sex_0" name="sex" value="남자">남자
+                    <input type="radio" id="sex_1" name="sex" value="여자">여자
+                </div>
+                <br>
+                <div>
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="email" value="" maxlength="200" placeholder="이메일을입력하세요">
+                </div>
+                <div>
+                    <label for="hobby_0">취미</label>
+                    <input type="checkbox" id="hobby_0" name="hobby" id="여행">여행  
+                    <input type="checkbox" id="hobby_1" name="hobby" id="축구">축구
+                    <input type="checkbox" id="hobby_2" name="hobby" id="농구">농구
+                    <input type="checkbox" id="hobby_3" name="hobby" id="야구">야구
+                </div>
+                <div>
+                    <label for="area1">지역</label> 
+                    <select id="area1">
+                        <option value="선택" name = "opt">선택</option>
+                        <option value="서울" name = "opt">서울</option>
+                        <option value="부산" name = "opt">부산</option>
+                        <option value="광주" name = "opt">광주</option>
+                        <option value="제주" name = "opt">제주</option>
+                        <option value="기타" name = "opt">기타</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="introduce">자기소개</label>
+                    <input type="text" name="" id="introduce">
+                </div>
+                <div>
+                    <ul id="infoList">
+                        <li>초등학교, 중학교, 고등학교</li>
+                    </ul>
+                </div>
+                <br>
+                <button id="submit1" >전송</button>        
+            </fieldset>
+        </form>        
+        <button id="addInfo">경력 추가</button>
+        <button id="deleteInfo">경력 삭제</button>
+    </div>
+<!-- 
+        //이름2자이상 10자 이내,필수
+        //아이디 : 8자리 이상 20자 이내,필수
+        //성별 : 필수
+        //이메일 : 10자리이상 200자리 이내,필수
+        //취미 : 선택
+        //지역 : 선택
+        /자기소개 : 필수, 1000자 이내 -->
+
+    <script>
+
+      const btnSubmit = document.getElementById("submit1");
+      btnSubmit.addEventListener("click", function(event) {
+        event.preventDefault(); //기본 액션을 중지시키는 역할
+        event.stopPropagation(); //이벤트 버블링을 발생시키지 마라
+        const formEl = document.querySelector("#frm");
+          let strName = frm.name;
+          if(strName.value.length < 2 || strName.value.length > 10) {
+            alert("이름을 2자 이상, 10자 이내로 입력하세요");
+          }
+          
+          let strID = frm.id;
+          if(strID.value.length < 8 || strID.value.length > 20) {
+            alert("아이디를 8자 이상, 20자 이내로 입력하세요");
+          }
+
+          let strGender = frm.sex;
+          if(!(strGender[0].checked == true) && !(strGender[1].checked == true)){ 
+            alert("성별을 선택해주세요.");
+          }
+
+          let strEmail = frm.email;
+          if(strEmail.value.length < 10 || strEmail.value.length > 200) {
+            alert("이메일은 10자이상, 200자리 이내입니다.");
+          }
+
+          let hobbyii = frm.hobby;
+          let count = 0;
+          
+          if(!(hobbyii[0].checked) && !(hobbyii[1].checked) && !(hobbyii[2].checked) && !(hobbyii[3].checked)) {
+            alert("취미를 입력해주세요.");
+          }
+          
+          let location = frm.area1;
+          if(location.value == "선택") {
+            alert("지역을 입력해주세요.");
+          }
+
+          let mySelf = frm.introduce;
+          if(mySelf.value.length <= 0 || mySelf.value.length > 1000) {
+            alert("자기소개는 필수입니다.");
+          }
+
+
+          formEl.action = "dom3.html";
+          formEl.method = "GET";
+          formEl.submit();
+      });
+
+    //   const addProfile = document.querySelector("#addInfo");
+    //   addProfile.addEventListener("click", function(){
+    //     let ulProfile = document.querySelector("#infoList");
+    //     let tmpHTML = "<li>초등학교 : A, 중학교 : B </li>";
+    //     ulProfile.innerHTML += tmpHTML; 
+
+    //   })
+    const addProfile = document.querySelector("#addInfo");
+      addProfile.addEventListener("click", function(){
+        // let ulProfile = document.querySelector("#infoList");
+        let liEl = document.createElement("li");
+        let txt = document.createTextNode("A A A");
+        liEl.appendChild(txt);
+        document.querySelector("#infoList").appendChild(liEl);
+      })
+
+      const deleteProfile = document.querySelector("#deleteInfo");
+      const information = document.querySelector("#infoList");
+      deleteProfile.addEventListener("click", function() {
+      information.removeChild(information.lastElementChild);
+    })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <!-- 
+        //form 태그 기본 액션 : submit(전송)
+        //기본 동작 : name 속성으로 동작 서버하고 통신할때는 name으로
+        -->
+    <form id="frm" action="" method="">
+        <input type="text" name="userName" id="userName" value="" maxlength="20" onfocus="focusBlur('divUserName')" onsubmit="return false;" placeholder="이름을 입력하세요." required>
+        <div id="divUserName">
+
+        </div>
+        <!-- <input type="button" id="btnSubmit" name="btnSubmit" value="전송"> -->
+        
+        
+        <!-- form안에 있으면 디폴트 submit -->
+        <!-- <button>전송</button> -->
+        <button type="submit" onclick="sendForm()">전송</button>
+    </form>
+    
+    <script>
+        function sendForm() {
+            const frm = document.getElementById("frm");
+            
+            let userName = frm.userName;
+
+            if(userName.value.length <  2 || userName.value.length > 10) {
+                alert("이름을 입력하세요.");
+                userName.focus();
+                const divUserName = document.getElementById("divUserName");
+                divUserName.innerText = "asdasdsadasd";
+                divUserName.style.color = "red";
+                return false;
+            }
+            // alert(frm.userName.value);
+        }
+
+        // function focusBlur(obj) {
+        //     document.getElementById(obj).style.display = "none";
+        // }
+    </script>
+
+</body>
+</html>
