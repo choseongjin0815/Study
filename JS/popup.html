@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>팝업창 띄우기</h1>
+    <div>
+        <button onclick="window_open()">새창 띄우기</button>
+        <button onclick="close_popup()">새창닫기</button>
+        <button onclick="window.close()">현재창 닫기</button>
+        <br>
+        <span id="spText">여기 텍스트를 자식 윈도우에서 컨트롤 하세요</span>
+    </div>
+    
+    <script>
+        let newWin = null;
+        function window_open() {
+            newWin = window.open("close1.html", "_blank", "width=300, height=300, top=200px, left=200px");
+        //    let frm = document.getElementById("ifrm");
+        //    frm.style.height = 0;
+        //    frm.style.border="0px"
+        //    frm.src="https://www.daum.net";  
+            
+        }
+        function close_popup() {
+            newWin.close();
+        }
+    </script>
+    <!-- <iframe src="https://www.naver.com" id="ifrm" frameborder="0"></iframe> -->
+</body>
+
+</html>

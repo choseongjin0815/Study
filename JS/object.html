@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const p1 = {}
+        const person = {
+            name : {
+                firstName : "Gildong",
+                lastName : "Hong",
+            },
+            hobby : [
+                "football",
+                "baseball"
+            ],
+            hello : function() {return "hello";}
+        };
+        person.name.firstName;
+        let h = person.hobby;
+        for(var item in h) {
+            h[item];
+        }
+
+        document.write(person.name.firstName);
+        document.write(person.hobby[0]);
+        document.write("<br>");
+
+        console.log(person.hello());
+
+        console.log(person.name.firstName)
+        console.log(person["name"]["firstName"]);
+
+
+        //동적 객체 생성 방법
+        const person1 = {};
+        person1.name = {
+            firstName : "길동",
+            lastName : "홍"
+        }; //객체 형태
+        person1.hobby = ["soccer", "golf", "baseball"];
+        person1.hello = function() {return "good-bye"};
+        person1.age = 30;
+        person1["age"] = [40, 30];
+        console.log(person1)
+        console.log(person1.name.firstName);
+        console.log(person1.name.lastName);
+        console.log(person1.age[1]);
+        //얕은 복사  const로 해도 객체는 값을 바꿀 수 있음. const로 선언한 변수가 해당 객체의 주소값을 가지고 있음.
+        const copyPerson = person1;
+
+        person1.name.firstName = "길순";
+
+        console.log(person1.name.firstName);
+        console.log(copyPerson.name.firstName);
+        //깊은 복사
+        let num1 = 20;
+        let num2 = num1;
+        num1 = 30;
+        console.log(num1);
+        console.log(num2);
+    </script>
+</body>
+</html>

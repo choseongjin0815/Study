@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const person = {
+            name : {
+                firstName : [
+                    "Gildong",
+                    "Seongjin",
+                    "Hooni"
+                ],
+                lastName : [
+                    "Kim",
+                    "Cho",
+                    "Park"
+                ]
+            },
+            age : [17, 24, 27],
+            
+            hello : function() {
+                document.write("Hello");
+            } 
+        }
+        document.write(person.name.firstName[0]+"<br>");
+        document.write(person.hello())
+        for(index in person) {
+            for(items of person[index]) {
+                documnet.write(items);
+            }
+        }
+
+        let now = new Date();
+        document.write("현재 시각은 : " + now + "<br>");
+        document.write("현재 시각은 : " + now.toLocaleString() + "<br>");
+        document.write(now.getHours());
+        if(now.getHours() > 12) {
+            console.log("응모 시간입니다.");
+        }
+        else {
+            console.log("응모 시간이전입니다.");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 10; //전역변수
+        function sum() {
+            console.log(`함수 내부 ${a}`);
+        }
+        sum();
+        console.log(`함수 외부 ${a}`);
+
+        {
+            var b = 20; //호이스팅 : 변수 선언부를 실행 시키기 전에 제일 최상단으로 끌어놓음
+            // let b = 20; let과 const는 호이스팅으로 동작 x 해당 지역 범위에서만 사용가능
+            //let은 선언하고 나중에 값을 바꿀 수 있고 const는 선언과 동시에 값을 할당해야함.
+            //객체를 쓸때에는 const, 반복문 같은 경우 값을 계속 할당해야한다면 let을 쓸 것.
+            console.log(`지역 코드 블럭 내부 ${a}`);
+            console.log(`지역 코드 블럭 내부 ${b}`);
+        }
+
+        console.log(`지역 코드 블럭 외부 ${a}`);
+        console.log(`지역 코드 블럭 외부 ${b}`);
+        
+        const c = 40;
+        function sum2() {
+            // 코드 블럭에 갇혀 있어서 충돌이 안남 es6버전부터 이 부분이 추가됨.
+            let a = 50;
+            let c = 70;
+            console.log(`지역 코드 블럭 내부 ${a}`);
+            console.log(`지역 코드 블럭 내부 ${c}`);
+        }
+        sum2();
+        console.log(`지역 코드 블럭 외부 ${a}`);
+        console.log(`지역 코드 블럭 외부 ${c}`);
+
+        console.log(numx);
+        var numx = 10;
+
+        //호이스팅 변수로 선언했을 때에는 밑에 있으면 인식 못하지만 함수에 선언된 경우 맨위로 끌어올려 해석(자바스크립트는 인터프리터 형식이라 위에서 부터 한라인씩 해석)
+        printx();
+        function printx() {
+            console.log("Hello");
+        }
+    </script>
+</body>
+</html>

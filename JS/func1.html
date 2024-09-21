@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //스크립트 아래에서는 var 선언 안해도 사용은 가능
+        // var b; //전역변수
+        // function gugudan() {
+        //     for(var i = 2; i <= 9; i++) {
+        //         for(var j = 1; j <= 9; j++) {
+        //             console.log(`${i} X ${j} = ${i*j}`);
+        //         }
+        //     }
+        //     console.log(`전역 변수 입니다 : ${b}`);
+        //     console.log(`지역변수 : ${i}, ${j}`);
+        // }
+        // console.log(`전역 변수 입니다 : ${b}`);
+
+        // gugudan();
+        // b="xxx";
+
+        // console.log(`지역변수 : ${i}, ${j}`);
+        // 자바스크립트 호이스팅
+        // var는 중복정의 가능
+        // let키워드의 특징 : 값은 바꿀 수 있으나(재할당) 중복 선언은 불가. var의 단점을 커버 var키워드 사용하지 말고 let키워드 사용할 것 
+        // const키워드 : 중복선언 및 재할당 불가
+        // const y = 1;
+        // y = 10;
+    
+        // const yy = 1;
+        // yy = 2;
+        // let y = 2;
+        // let y = 1;
+        // var x = 10;
+        // function num1() {
+        //     console.log(`x : ${x}`);
+        //     console.log(`y : ${y}`);
+        //     var y = 20;
+        // }
+
+        // num1();
+
+        // function sum(num1, num2) {
+        //     return num1 + num2;
+        // }
+
+        // sum(10, 20);
+
+        //기본함수
+        function sum(num1, num2) {
+            return num1 + num2;
+        }
+        //사용법
+        console.log("sum : " + sum(10, 20));
+
+        //익명 함수
+        const sum2 = function(num1, num2) {return num1 + num2;}
+        console.log("suum2 : " + sum2(10,20));
+
+        //네이밍 함수
+        const sum3 = function sum3(num1, num2) {return num1 + num2};
+        console.log("sum3 : " + sum3(20, 30));
+        //화살표 함수
+        const sum4 = (num1, num2) => {return num1 + num2};
+        console.log("sum4 : " + sum4(15, 20));
+
+        const hi = ()=> alert("안녕하세요~~");
+
+        // hi();
+    </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>반복문의 구조</h1>
+    <!-- <code>
+        식(expression)
+        문(statement)
+        if ( 조건문 ) {
+            실행문;
+            실행문;
+        } else {
+            실행문;
+            실행문;
+        }
+    </code> -->
+    <code>
+        삼항 연산자 : ?<br>
+        (조건) ? 참일 때 처리로직 : 거짓일 때 처리 로직;
+    </code>
+    <script>
+        // var no = prompt("숫자를 입력하세요 : ");
+        // if (no % 2) {;
+        //     alert("2의 배수가 아닙니다.");
+        // }
+        // else {
+        //     alert("2의 배수가 입니다.");
+        // }
+        // var num1 = prompt("숫자1 : ");
+        // var  if(num1 < 10 || num2 > 20) {
+        //     alert("num1 : " + num1 + "num2 : " + num2);
+        // }
+        // else {
+        //     alert("else");
+        // } num2 = prompt("숫자2 : ");
+        // var num1 = 10;
+        // var num2 = 0.1;
+        // console.log("num1 : " + num1);
+        // console.log("num2 : " + num2);
+        // console.log("num1 + num2 : " + num1 + num2);
+        // console.log(num1 + num2);
+        // var num3 = 10;
+        // var num4 = "abc";
+        // var num5 = "100";
+        // var num6 = "20abc";
+        // var num7 = "abc20";
+        // var num8 = "ab20c";
+        // console.log(num3+num4);
+        // console.log(num3+num5);
+        // console.log(num3+num6);
+        // console.log(num3+parseInt(num6)); //30
+        // console.log(parseInt("abc"));
+        // console.log(parseInt(num7));
+        // console.log(parseInt(num8));
+
+
+        // var bool1 = true;
+        // var bool2 = false;
+        // var bool3 = 1;
+        // var bool4 = 0;
+        // console.log(bool1);
+        // console.log(bool2);
+        // console.log(bool3);
+        // console.log(bool4);
+        // console.log(bool1 && bool3);
+        // console.log(bool1 && bool4);
+        // console.log(bool2 && bool3);
+        // console.log(bool2 && bool4);
+        // var bool5 ="";
+        // if(bool1 && bool3) {
+        //     bool5 = bool1 && bool3;
+        // }
+        // console.log(bool5);
+
+        // var num1 = 10, num2 =100;
+        // if(num1 > num2) {
+        //     console.log("num2가 큼");
+        // } else {
+        //     console.log("num1이 큼");
+        // }
+
+        // var arrScores = [80, 90, 100];
+        // console.log(arrScores);
+        // console.log(arrScores[0]);
+        // console.log(arrScores[1]);
+        // console.log(arrScores[2]);
+
+
+        //시험점수
+        //90초과 ~ 100이하 : A
+        //80초과 ~ 90이하 : B
+        //70초과 ~ 80이하  : C
+        // 60초과 ~ 70이하 : D
+        // ~ 60 : 
+        // var score = prompt("시험 점수를 입력하세요.");
+        // if( score > 90) {
+        //     console.log("A");
+        // }
+        // else if( score > 80 && score <= 90) {
+        //     console.log("B");
+        // }
+        // else if( score > 70 && score <= 80) {
+        //     console.log("C");
+        // }
+        // else if (score > 60 && score <= 70) {
+        //     console.log("D");
+        // }
+        // else {
+        //     console.log("F");
+        // }
+
+
+        var score = prompt("시험 점수를 입력하세요.");
+        console.log(parseInt(score/10));
+        switch (parseInt(score / 10)) {
+            case 9 : console.log("A")
+                break;
+            case 8 : console.log("B")
+                break;
+            case 7 : console.log("C")
+                break;
+            case 6 : console.log("D")
+                break;
+            default : console.log("F")
+                break;
+        }
+
+        var score = prompt("시험 점수를 입력하세요.");
+        console.log(parseInt(score / 10));
+        switch (parseInt(score / 10)) {
+            case 9 : case 10 : console.log("A");
+                break;
+            case 8 : console.log("B");
+                break;
+            case 7 : console.log("C");
+                break;
+            case 6 : console.log("D");
+                break;
+            default : console.log("F");
+                break;
+        }
+    </script>
+    <ul>
+        <li></li>
+    </ul>
+</body>
+</html>
