@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>요소 노드 추가하기</h1>
+    <!-- 1. a태그를 추가
+    2. a태그에 '네이버' 추가 -->
+    <div id="pDiv">
+        <ul>
+            <li>네이버</li>
+            <li>다음</li>
+        </ul>
+    </div>
+    <div>
+        
+    </div>
+    <script>
+        function addCreateTag() {
+            //1.페어런트 태그를 가져온다.
+            //2.태그 엘리먼트를 생성
+            //3. 태그 속성을 설정
+            //4. 페어런트 태그에 생성한 엘리먼트를 추가한다.
+            const pDiv = document.querySelector("#pDiv")
+            const aEl = document.createElement("a");
+            const aHref = document.createAttribute("href");
+            aHref.value = "https://www.naver.com";
+            const aTarget = document.createAttribute("target");
+            aTarget.value = "_blank";
+            const aText = document.createTextNode("네이버");
+            aEl.appendChild(aText);
+
+            aEl.setAttributeNode(aHref);
+            aEl.setAttributeNode(aTarget);
+
+
+            pDiv.appendChild(aEl);
+            
+        }
+
+        function addHtml() {
+            const pDiv = document.querySelector("#pDiv");
+            pDiv.innerHTML += "<a href = 'https://www.naver.com' target = '_blank'>네이버</a>"
+        }
+
+        // function {}
+    </script>
+</body>
+</html>

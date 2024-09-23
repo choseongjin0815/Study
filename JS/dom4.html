@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red-color {
+            color : red;
+        }
+        .blue-color {
+            color : blue;
+        }
+        .f-size {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id ="div1" class="box-1">
+        <p id="text1" class="text">text-1</p>
+        <p class="text">text-2</p>
+    </div>
+    <div id="div2"class="box-2">
+        <p class="text">text-3</p>
+        <p class="text">text-4</p>
+    </div>
+    <div>
+        <a href="https://www.naver.com" data-link="">네이버</a>
+    </div>
+
+    <div>
+        <button onclick = "changeBg('#div1', '.box-2')">배경색</button>
+        <button onclick = "changeClass()">클래스변경</button>
+        <button onclick = "removeClass()">remove</button>
+        <button onclick = "check()">조건변경</button>
+        <button onclick = "changeP()">p태그</button>
+        <br>
+        <button onclick="addAttr()">attribute 속성 추가</button>
+    </div>
+    <!-- 자바스크립트의 호이스팅, 변수명을 지역변수등 전역변수등 동일하게 사용하지 않아야 어느부분에서 호이스팅 문제가 발생했는지 찾기 용이함 -->
+    <script>
+        // getelements -> HTML컬렉션 타입 , querySelector-> 오브젝트 타입으로 접근
+        // const el = document.querySelector(".box-1"); //queryselector는 css선택자라고도 함
+        // const el2 = document.querySelector("#div");
+        // const el3 = document.querySelectorAll(".text");
+        // document.write(`${el3}`);
+    let cnt = 0;
+    function changeBg(divId = '#div1', divClass) {
+        cnt++;
+        console.log(cnt)
+        if(cnt % 2 == 1) {
+            const pEl = document.querySelector(divId);
+            const pE2 = document.querySelector(divClass);
+            pEl.style.backgroundColor = "#ff0000";
+            pEl.style.fontSize = "20px";
+            pEl.style.color = "#ffffff";
+            pE2.style.backgroundColor = "blue";
+            pE2.style.fontSize = "16px";
+            pE2.style.color = "black";
+           
+        }
+        else {
+            const pEl = document.querySelector(divId);
+            const pE2 = document.querySelector(divClass);
+            pE2.style.backgroundColor = "#ff0000";
+            pE2.style.fontSize = "20px";
+            pE2.style.color = "#ffffff";
+            pEl.style.backgroundColor = "blue";
+            pEl.style.fontSize = "16px";
+            pEl.style.color = "black";
+        }
+        
+    }
+
+
+    function changeClass() {
+        const pEl = document.querySelector("#text1");
+        pEl.classList.add("red-color", "f-size");
+        // pEl.classList.add("blue-color");
+    }
+    function removeClass() {
+        const pEl = document.querySelector("#text1");
+        pEl.classList.remove("red-color");
+    }
+    //각각의 p 태그의 클래스 요소에서 red-bg가 있으면 blue-bg로
+    //blue-bg가 있으면 red-bg로 바꾸고
+    //font-size, 20px 요소가 있으면 제거하고, 없으면 추가하는
+    //코드를 작성하세요.  
+
+    function check() {
+        const pEl = document.querySelectorAll(".text");
+        // document.write(
+            // if(classList.contains("red-color")) {
+            //     for(let j of pEl) {
+            //         j.classList.remove("red-color");
+            //         j.classList.add("blue-color");
+            //     }
+            // }
+
+            for(let j of pEl) {
+                j.classList.add("red-color");
+            }
+            for(let i of pEl) {
+                if(i.classList.contains("red-color")) {
+                    i.classList.remove("red-color");
+                    i.classList.add("blue-color");
+                }
+                else if(i.classList.contains("blue-color")){
+                    i.classList.remove("blue-color");
+                    i.classList.add("red-color");
+                }
+            }
+       
+        
+    }
+      
+    
+
+    function changeClass2() {
+        const pEl = document.querySelectorAll(".text");
+        for(i of pEl) {
+            if( i.classList.contains("red-color")) {
+                i.classList.remove("red-color");
+                i.classList.add("blue-color");
+            }
+            else if(i.classList.contains("blue-color")){
+                i.classList.remove("blue-color");
+                i.classList.add("red-color");
+            }
+        }
+    }   
+
+    //속성값 추가하기
+    //1.클래스 추가
+    //2.사용자 정의 data- 속성 추가
+    function addAttr() {
+        let aEl = document.querySelector("a");
+        if(aEl.classList.contains("red-color")) {
+            aEl.removeAttribute("red-color");
+            aEl.removeAttribute("data-link");
+        }
+        else {
+            aEl.setAttribute("class", "red-color");
+            aEl.setAttribute("data-link", "네이버");
+        }
+        // aEl.setAttribute("class", "red-color");
+        // aEl.setAttribute("data-link", "네이버");
+    }
+    </script>
+</body>
+</html>

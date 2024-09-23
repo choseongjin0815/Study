@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 조작</title>
+</head>
+<body>
+    <h1>DOM 값 변경하기</h1>
+    <div>
+        <p id = "textContent">textContent</p>
+        <p id = "innerText">innerText</p>
+        <p id = "innerHTML">innerHTML</p>
+    </div>
+    <div>
+        <button onclick="rndel()">변경</button>
+    </div>
+<!-- 각 p 태그 안의 내용의 색상을 빨간색, 파란색, 노란색으로 변경해보세요 -->
+    <script>
+        
+        function rnd() {
+            let arrColors = ["red", "blue", "yellow"];
+            let rndNo = Math.floor(Math.random()*3);
+            return arrColors[rndNo];
+        }
+        function rndel () {
+            let arrIds = ["textContent", "innerText", "innerHTML"];
+            let rndNum = Math.floor(Math.random()*3);
+            document.getElementById(arrIds[rndNum]).innerHTML
+            = "<span style='color:"+rnd()+";'>"+arrIds[rndNum]+"</span>";
+
+        }
+
+        function changeInnerHtml() {
+             document.getElementById("textContent").innerHTML 
+              = "<span style = 'color:"+rnd()+"'>textContent</span>";
+             document.getElementById("innerText").innerHTML 
+              = "<font style = 'font-weight:bold'>innerText</font>";
+             document.getElementById("innerHTML").innerHTML 
+              = "<fon style = 'color:yellow'>innerHTML</fon>";
+            // rndel()
+        }
+
+        // function rndel () {
+        //     let arrIds = ["textContent", "innerText", "innerH™L"];
+        //     let rndNo = Math.floor(Math. random())*3;
+        //     document. getElementById (arrIds[rndNo]). innerHTML
+        //     = "‹span style=' color:"+rnd()+"; '>"+arrIds[rndNo]+"</span›"
+
+
+        // }
+    //    document.getElementById("textContent").innerHTML = "<span style =color:red>textContent</span>"
+        
+       
+       
+    //    function colorchange(){
+    //         let el = document.getElementById("textContent");
+    //         el.style.color = 'red';
+    //     }
+    //     colorchange();
+    </script>
+</body>
+</html>
