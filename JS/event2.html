@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            border: none;
+            background-color: azure;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#" onclick="changeBg('green'); bg1();">링크1</a></li>
+        <li><a href="#" onclick="changeBg('red')">링크2</a></li>
+        <li><a href="#" onclick="changeBg('blue')">링크3</a></li>
+    </ul>
+    <div id="result">
+
+    </div>
+    <script>
+        function changeBg(col) {
+            let result = document.querySelector('#result');
+            result.style.backgroundColor = col;
+        }
+
+        function bg1() {
+            let msg = confirm("다른 색으로 바꿀까요?");
+            if(msg) {
+                let result = document.querySelector('#result');
+                result.style.backgroundColor = "orange";
+            }
+        }
+    </script>
+</body>
+</html>
