@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="prod_cnt" data-bagcnt="0" data-bookcnt="0">
+        <div>
+            <span>가방</span><br>
+            <button onclick="addCount('bag')">상품추가+</button>
+            <button onclick="minCount('bag')">상품삭제</button>
+        </div>
+        <div>
+            <span>도서</span><br>
+            <button onclick="addCount('book')">상품추가+</button>
+            <button onclick="minCount('book')">상품삭제</button>
+        </div>
+
+        <button onclick="countCheck()">countCheck</button>
+        <!-- <button onclick="addCount()">상품추가+</button>
+        <button onclick="minCount()">상품삭제</button> -->
+
+    </div>
+    
+    <script>
+        function addCount(type) {
+            const cntEl = document.querySelector("#prod_cnt");
+            switch(type) {
+                case "bag" :  cntEl.dataset.bagcnt++; break;
+                case "book" : cntEl.dataset.bookcnt++; break;
+                default :
+            }
+            // cntEl.dataset.cnt++;
+            console.log(`cntEl.dataset : ${cntEl.dataset.bagcnt}, ${cntEl.dataset.bookcnt}`);
+        }
+        function minCount(type) {
+            const cntEl = document.querySelector("#prod_cnt");
+            // cntEl.dataset.cnt--;
+            switch(type) {
+                case "bag" :  cntEl.dataset.bagcnt--; break;
+                case "book" : cntEl.dataset.bookcnt--; break;
+                default :
+            }
+            console.log(`cntEl.dataset : ${cntEl.dataset.bagcnt}, ${cntEl.dataset.bookcnt}`);
+        }
+
+        function countCheck() {
+            const cntEl = document.querySelector("#prod_cnt");
+            if(cntEl.dataset.bagcnt <= 0 || cntEl.dataset.bookcnt <= 0) {
+                alert("상품 개수를 입력하세요.");
+            }
+        }
+    </script>
+
+<hr><br><br>
+
+<!-- 상품 추가를 누르면 li추가10까지 삭제누르면 최소 1개까지 삭제 -->
+    <ul id="product" data-cnt = "0" data-maxcnt="10" data-mincnt="1">
+        <li>상품1</li>
+    </ul>
+
+
+    <button onclick="addProduct()">상품추가</button>
+    <button onclick="deleteProduct()">상품삭제</button>
+
+    <script>
+        
+        function addProduct() {
+            const cntEl = document.querySelector("#product");
+            let count = Number(cntEl.dataset.cnt);
+            let maxcount = Number(cntEl.dataset.maxcnt)
+            if(count < maxcount)
+             {
+                console.log(`cnt : ${count}`);
+                cntEl.dataset.cnt++;
+                
+            }
+            // console.log(`cntmax : ${cntEl.dataset.maxcnt}`);
+            // console.log(`cnt : ${cntEl.dataset.cnt}`);
+
+        }
+
+        function deleteProduct() {
+            const cntEl = document.querySelector("#product");
+            // document.write(cntEl.dataset.cnt);
+            let count = Number(cntEl.dataset.cnt);
+            let mincount = Number(cntEl.dataset.mincnt);
+            if(count > mincount) {
+                cntEl.dataset.cnt--;
+            }
+            console.log(`cnt : ${count}`);
+        }
+    </script>
+</body>
+</html>
