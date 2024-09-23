@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 조작</title>
+</head>
+<body>
+    <p id="title">
+        Hello, <span style="display: none;">Javascript</span>
+        <span>출력 테스트1</span>
+        <span style="display: none;">출력 테스트2</span>
+    </p>
+    <p>
+        <button id="addInnerHtml" onclick="addInnerHtml()">InnerHTML 추가</button>
+
+    </p>
+
+    <script>
+        let el1 = document.getElementById("title").textContent; //텍스트 가져옴
+        let el2 = document.getElementById("title").innerText; //눈에 보여지는 문자 그대로 가져옴
+        let el3 = document.getElementById("title").innerHTML; //안에 있는 태그, 텍스트 그대로 다 가져옴.
+        document.write(`el1 : ${el1}<br>`);
+        document.write(`el2 : ${el2}<br>`);
+        document.write(`el3 : <xmp>${el3}</xmp><br>`);
+        function addInnerHtml() {
+            let el = document.getElementById("title");
+            el.innerHTML = "<span style = 'color = red > HTML 내용이 변경 됩니다.";
+        }
+        addInnerHtml();
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1 id="title">title</h1>
+    <p class="text">text-1</p>
+    <p class="text">text-2</p>
+    <div class="box-1">
+        <p class="text">text-1</p>
+        <p class="text">text-2</p>
+    </div>
+    <div class="box-2">
+        <p class="text">text-3</p>
+        <p class="text">text-4</p>
+    </div>
+    <div id="div1"></div>
+    <script>
+        // const qel = document.querySelector(".box-1");
+        // document.write(`${qel}<br>`);    
+        // const qel2 = document.querySelector("#div1");
+        // document.write(`${qel2}<br>`); 
+        // const qel3 = document.querySelectorAll("div");
+        // document.write(`${qel3}<br>`); 
+        // for(let el of qel3) {
+        //     document.write(`${el.className}`);
+        //     document.write(`${el}`);
+        // }
+    </script>
+
+    <hr>
+    <script>
+        const el = document.getElementById("title");
+        document.write(`${el}<br>`);
+
+        const classEl = document.getElementsByClassName("text");
+        document.write(`${classEl}<br>`);
+        for(let el of classEl) {
+            document.write(`${el}<br>`)
+        }
+
+        const tagEls = document.getElementsByTagName("p");
+        document.write(`${tagEls}<br>`);
+        for(let el of tagEls) {
+            document.write(`${el}<br>`);
+        }
+    </script>
+</body>
+</html>
