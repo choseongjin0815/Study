@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arrSchoolInfo2 = {
+            "E_SCHOOL" : ["신창초등학교", "2006.03~2012.02", "서울"],
+            "M_SCHOOL" : ["창북중학교", "2012.03~2015.02", "서울"],
+            "H_SCHOOL" : ["선덕고등학교", "2015.03~2018.02", "서울"],
+        };
+
+        // 그냥 내식대로 한 풀이
+        // function printSchoolInfo(info) {
+        //     for (let key in info) {
+        //         let school = info[key][0];      
+        //         let period = info[key][1];      
+        //         let location = info[key][2];    
+        //         let [start, end] = period.split('~');
+        //         let [startYear, startMonth] = start.split('.');
+        //         let [endYear, endMonth] = end.split('.');
+        //         document.write(`출신학교 : ${school}, (입학년 : ${startYear}, 입학월 : ${startMonth}, 졸업년 : ${endYear}, 졸업월 : ${endMonth}), ${location}<br>`);
+        //     }
+        // }   
+        // printSchoolInfo(arrSchoolInfo2);
+
+        // 객체에 접근한 문제풀이
+        function getObjKeyList(obj) {
+            return Object.keys(obj);
+        }
+        function dateSep(period) {
+            let [start, end] = period.split('~');
+            let [startYear, startMonth] = start.split('.');
+            let [endYear, endMonth] = end.split('.');
+            document.write(`(입학년 : ${startYear}, 입학월 : ${startMonth}, 졸업년 : ${endYear}, 졸업월 : ${endMonth})`);
+        }
+        getObjKeyList(arrSchoolInfo2);
+        const value = [];
+        function getSchoolInfo(obj) {
+            let arrKeys = getObjKeyList(obj);            
+            for(let i = 0; i < arrKeys.length; i++) {
+                const keys = arrKeys[i];
+                value[i] = obj[keys];
+                document.write(obj[keys][0]);
+                dateSep(obj[keys][1]);
+                document.write(obj[keys][2] + "<br>");
+              
+            }    
+        }
+        // getSchoolInfo(arrSchoolInfo2);
+
+        //초등학교 정보를 입력하세요... :
+        //중학교 정보를 입력하세요... :
+        //고등학교 정보를 입력하세요... :
+        //학교명, 입학년도~졸업년도, 지역 을 입력받음
+
+        // let arrSchoolInfo = [
+        //     ["신창초등학교", "2006.03~2012.02", "서울"],
+        //     ["창북중학교", "2012.03~2015.02", "서울"],
+        //     ["선덕고등학교", "2015.03~2018.02", "서울"]
+        // ]
+
+        // let arrInputSchoolInfo = {
+       
+        // }
+        // arrInputSchoolInfo = prompt("초등학교 정보를 입력하세요...");
+        // arrInputSchoolInfo = prompt("중학교 정보를 입력하세요...");
+        // arrInputSchoolInfo = prompt("고등학교 정보를 입력하세요...");
+        // document.write(arrInputSchoolInfo);
+        // document.write(info);
+
+
+
+        let arrSInfo = new Array();
+        // let elInfo = prompt("초등학교 정보를 입력하세요.... : ");
+        // let mlInfo = prompt("중학교 정보를 입력하세요.... : ");
+        // let hlInfo = prompt("고등학교 정보를 입력하세요.... : ");
+        // function setSchoolInfo(info) {
+        //     return info.split(",")
+        // }
+        // arrSInfo[0] = elInfo.split(",");
+        // arrSInfo[1] = mlInfo.split(",");
+        // arrSInfo[2] = hlInfo.split(",");
+
+
+
+        // getSchoolInfo(arrSInfo);
+
+        // let member = {
+        //     memInfo : [
+        //         {name : "홍길동1", id: "1234"},
+        //         {name : "홍길동2", id: "1235"},
+        //         {name : "홍길동3", id: "1236"},
+        //         {name : "홍길동", id: "1237"},
+        //         {name : "홍길동", id: "1238"},
+        //         {name : "홍길동", id: ""},
+        //         {name : "홍길동", id: ""},
+        //         {name : "홍길동", id: ""},
+        //         {name : "홍길동", id: ""},
+        //         {name : "홍길동", id: ""},
+        //         {name : "홍길동", id: ""},
+        //     ]
+        // }
+//추첨 : 4명
+//홍**1(1234),홍**1(1234),홍**1(1234),홍**1(1234)
+
+// let member = new Array();
+
+
+    let member = {
+        memInfo : [
+            {name : "홍길동1", id : "1231"},
+            {name : "홍길동2", id : "1232"},
+            {name : "홍길동3", id : "1233"},
+            {name : "홍길동4", id : "1234"},
+            {name : "홍길동5", id : "1235"},
+            {name : "홍길동6", id : "1236"},
+            {name : "홍길동7", id : "1237"},
+            {name : "홍길동8", id : "1238"},
+            {name : "홍길동9", id : "1239"},
+            {name : "홍길동0", id : "1230"}
+        ]
+    }
+
+    // document.write(member.memInfo[0].name);
+
+
+    let selected = new Array();
+    let rndNo = 0;
+    let cnt = 0;
+    let save = new Array();
+    // save.push(1);
+    // document.write(save)
+  
+    function lotto(obj) {
+        for(let i = 0; i < 4; i++) {
+            while(1) {
+                rndNo = Math.floor(Math.random()*(10));
+                    if(i == 0) {
+                        selected.push(member.memInfo[rndNo]);
+                        document.write(`${selected[i].name.replace("길동", "**")}, ${selected[i].id}<br>`);
+                        save.push(member.memInfo[rndNo].id);
+                        cnt++;
+                    }
+                    else if(!((save).includes(member.memInfo[rndNo].id))) {
+                        save.push(member.memInfo[rndNo].id);
+                        selected.push(member.memInfo[rndNo]);
+                        document.write(`${selected[i].name.replace("길동", "**")}, ${selected[i].id}<br>`);
+                        cnt++;
+                    }
+                    else {
+                        continue;
+                    }
+                    // // selected.push(member.memInfo[Math.floor(Math.random()*(10))]);
+                    // // document.write(`${selected[i].name.replace("길동", "**")}, ${selected[i].id}<br>`);
+                    // // if(selected[i].id == selected.id) {
+                    if(cnt == 1) {
+                        cnt = 0;
+                        break;
+                    } 
+                    else{}
+            }
+        }
+    }
+
+    lotto(member);
+        
+        
+    </script>
+</body>
+</html>

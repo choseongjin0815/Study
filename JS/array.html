@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let color1 = ["yellow", "red", "blue"];
+        let color2 = ["cyon", "puple", "violet"];
+        //두 개의 배열 합치기
+        let colors = color1.concat(color2);
+        let colors2 = color2.concat(color1);
+        document.write("colors : " + colors + "<br>");
+        document.write(`colors2 :   ${colors2}<br>`);
+
+        //배열 내부 요소 합치기
+        let str1 = color1.join('');
+        let str2 = color1.join(';');
+        document.write(str1  +str1[0] + "<br>");
+        document.write(str2[0]);
+
+        let addr = ["서울 강남구 논현로 27", "201호", "12345"];
+        let addr1 = "서울 강남구 논현로 27 | 201호| 12345"
+        full_addr = addr.join(" ");
+        let arrAddr = addr1.split("|")
+        document.write(`주소 : ${addr1.replaceAll("|", " ")} <br>`);
+
+        //본인의 초등학교 ~ 고등학교까지
+        //학교명
+        //입학년도 ~ 졸업년도
+        ////소재지
+        //arrSchoolInfo = "";
+        //for 문으로 출력하는 함수를 작성하세요.
+
+        let arrSchoolInfo = [
+            ["신창초등학교", "2006.03~2012.02", "서울"],
+            ["창북중학교", "2012.03~2015.02", "서울"],
+            ["선덕고등학교", "2015.03~2018.02", "서울"]
+        ]
+        
+        // function getSchoolInfo(info) {
+        //     for(let s of info) {
+        //         document.write(`학교명 : ${s[0]}, 입학년도 : ${s[1]}, 입학월: , 졸업년도 : , 졸업월 : , 지역 : ${s[2]} <br>`);
+
+        //     }
+        // }
+
+        // function getSchoolInfo(info) {
+        //     for(let s of info) {
+        //         let ymresult = ymSep(s[1]);
+        //         // document.write(ymresult+"<br>");
+        //         document.write(`학교명 : ${s[0]}, 입학년도 : ${ymresult[0]}, 입학월:${ymresult[1]} , 졸업년도 :${ymresult[2]} , 졸업월 :${ymresult[3]} , 지역 : ${s[2]} <br>`);
+
+        //     }
+        // }
+        // function ymSep(arr) {
+        //     let sep = arr.split(".");
+        //     let sep2 =sep.split("~");
+            
+        //     let arr1 = new Array(4);
+        //     arr1[0] = sep[0];
+        //     arr1[1] = sep2[1];
+        //     arr1[2] = sep2[2];
+        //     arr3[4] = sep[2];
+        //     res = arr1
+        //     return res;
+        // }
+        // function getYearInfo(info, type) {
+        //     let arrInfo = info.split("~");
+
+        // }
+
+        function getObjKeyList(obj) {
+            return Object.keys(obj)
+        }
+        let arrSchoolInfo2 = {
+            "E_SCHOOL" : ["신창초등학교", "2006.03~2012.02", "서울"],
+            "M_SCHOOL" : ["창북중학교", "2012.03~2015.02", "서울"],
+            "H_SCHOOL" : ["신창초등학교", "2015.03~2018.02", "서울"],
+        }
+
+        
+        // function seperator(arr) {
+        //     let res = arr;
+        //     document.write(res)
+        //     // document.write(`입학년도 : ${res[0]}, 입학월 : ${res[1]}, 졸업년도 : ${res[2]}, 졸업월 : ${res[3]}`);
+        // }
+        function getSchoolInfo2(info) {
+            // for(index of info) {
+            //     // document.write(index.keys(info));
+            //     for(items in info[index]) {
+            //         document.write(items);
+            //     }
+            // }
+            for(let key in info) {
+                // document.write(`${key}, ${info[key][0]}<br>`);
+                for(let arr in info[key]) {
+                    // seperator(arr);
+                    document.write(info[key][arr] );
+                }
+                document.write("<br>")
+            }
+        }
+        getSchoolInfo2(arrSchoolInfo2);
+        // getSchoolInfo(arrSchoolInfo)
+
+        // let school = arrSchoolInfo.join(" ");
+        
+   
+
+        // for(let i = 0 ; i < school.length; i++) {
+        //     document.write(school[i].replaceAll(",", " "));
+        // }
+    </script>
+
+</body>
+</html>

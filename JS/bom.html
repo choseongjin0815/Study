@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { 
+            width: 5000px;
+            height: 5000px;
+        }
+        div{
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <button onclick ="printInfo()">윈도우 정보</button>
+    &nbsp;&nbsp;
+  
+    <button onclick="popup()">팝업</button>
+
+    <script>
+        function printInfo() {
+            document.write(`웹 브라우저 너비 : ${window.innerWidth}<br>`);
+            document.write(`웹 브라우저 높이 : ${window.innerHeight}<br>`);
+            document.write(`웹 브라우저 창의 너비 : ${window.outerWidth}<br>`);
+            document.write(`웹 브라우저 창 높이 : ${window.outerHeight}<br>`);
+            document.write(`웹 브라우저 창과 모니터 사이 간격 윗부분 : ${window.screenTop} : ${window.screenY}<br>`);
+            document.write(`웹 브라우저 창과 모니터 사이 왼쪽 간격 : ${window.screenX} : ${window.screenX}<br>`);
+            document.write(`웹 브라우저 스크린 가로 위치 : ${window.scrollX}<br>`);
+            document.write(`웹 브라우저 스크롤 세로 위치 : ${window.scrollY}<br>`);
+        }
+        function popup() {
+            window.open("dom.html", "NEW", "width=400, height=400");
+        }
+
+        function sTo() {
+            // window.scrollTo(400, 400);
+            window.scrollTo({top:2000, behavior:'smooth'});
+        }
+        function sBy() {
+            // window.scrollBy(400, 400);
+            window.scrollBy({top:200, behavior:'smooth'});
+        }
+    </script>
+
+    <div>
+        이용약관
+        1. 회원
+        2. 계약
+    </div>
+
+    <div>
+            
+        <button onclick ="printInfo()">윈도우 정보</button>
+  
+        <button onclick="popup()">팝업</button>
+        <hr>
+
+        <button onclick="sTo()">scrollTo(100, 200)</button>
+        <button onclick="sBy()">scrollBy(100, 200)</button>
+    </div>
+</body>
+</html>
