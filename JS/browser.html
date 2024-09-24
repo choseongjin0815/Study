@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>브라우저 객체 모델</title>
+</head>
+<body>
+    <h1>브라우저 객체 모델의 종류</h1>
+    <ul>
+        <li>
+            window : 웹 브라우저가 열릴 때마다 생성되는 최상위 객체
+            <ul>
+                <li>innerWidth : 웹 브라우저 화면 너비(px)</li>
+                <li>innerHeight : 웹 브라우저 화면 높이(px)</li>
+                <li>outerWidth : 웹 브라우저 창의 너비(px)</li>
+                <li>outerHeight : 웹 브라우저 창의 높이(px)</li>
+                <li>screenTop/screenY : 웹 브라우저 위쪽 면과 모니터의 간격</li>
+                <li>screenLeft/screenX : 웹 브라우저 왼쪽 면과 모니터의 간격</li>
+                <li>pageXoffset/scrollx : 웹 브라우저의 수평 스크롤 위치</li>
+                <li>pageYoffset/scrollY: 웹 브라웢의 수직 스크롤 위치</li>
+            </ul>
+            <ul>
+                <li>주요 메서드</li>
+                <li>alert() : 알림창 표시</li>
+                <li>confirm() : 확인창 표시</li>
+                <li>prompt() : 입력창 표시</li>
+                <li>open() : 새로운 웹 브라우저 창 열기</li>
+                <li>close() : 웹 브라우저 닫기</li>
+                <li>setTimeout() : 일정 시간(ms) 뒤에 콜백 함수(화살표함수 익명함수 등)를 한번만 실행</li>
+                <li>setInterval() : 일정 시간(ms) 마다 콜백 함수를 반복 실행</li>
+                <li>cleanInterval() : setInterval() 메서드로 반복 실행되는 함수를 중지</li>
+                <li>scrollTo() : 웹 브라우저의 스크롤을 특정 위치로 이동</li>
+                <li>scrollBy() : 웹 브라우저의 스크롤을 현재 위치에서 상대 위치로 이동</li>
+            </ul>
+        </li>
+        <li>
+            document : 웹 브라우저에 표시되는 HTML 문서 정보가 포함된 객체 -> &lt;html>&lt;/html> 
+        </li>
+        <li>
+            location : 웹 브랑저에 현재 표시된 페이지에 대한 URL 정보가 포함된 객체
+        </li>
+        <li>history : 웹 브라우저에 저장된 방문 기록이 포함된 객체</li>
+        <li>navigator : 웹 브라우저(메뉴) 정보가 포함된 객체</li>
+        <li>screen : 웹 브라우저의 화면 정보가 포함된 객체</li>
+    </ul>
+</body>
+</html>

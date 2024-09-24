@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>자식 윈도우 입니다.</p>
+        <button onclick="changePcolor()">부모창 요소 변경하기</button>
+        <button onclick="close_window()">close</button>
+    </div>
+    <script>
+        function close_window() {
+            window.close();
+        }
+        // let parent = null;
+        function changePcolor() {
+            const parentObj = opener.document.getElementById("spText");
+            parentObj.style.backgroundColor = "red";
+            // parent = window.oepn("popup.html");
+            // parent.getEle 
+        }
+
+    
+    </script>
+</body>
+</html>
