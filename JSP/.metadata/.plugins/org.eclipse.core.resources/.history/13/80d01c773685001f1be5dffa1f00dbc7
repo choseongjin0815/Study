@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces = "true" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>JSTL - Formmating태그</h2>
+<h3>숫자 포맷 지정</h3>
+<c:set var="num1" value="1234567"/>
+<fmt:formatNumber var="price" value="${num1}" type="currency"/>
+<fmt:formatNumber var="pro" value="0.05" type="percent"/>
+<ul>
+	<li>콤마 표시 : <fmt:formatNumber value="${num1}"/></li>
+	<li>콤마 표시 안함 : <fmt:formatNumber value="${num1}" groupingUsed="false"/></li>
+	<li>통화 : ${price }</li>
+	<li>퍼센트 : ${pro }</li>
+</ul>
+</body>
+</html>

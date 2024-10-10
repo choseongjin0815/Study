@@ -1,0 +1,70 @@
+<%@page import="net.fullstack7.bbs.BbsDTO"%>
+<%@page import="net.fullstack7.bbs.BbsDAO"%>
+<%@page import="java.util.List"%>
+<%@page import="net.fullstack7.member.MemberDTO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ page trimDirectiveWhitespaces = "true" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+int pageSize = 5; // 한 페이지에 보여줄 게시글 수
+int currentPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1; // 현재 페이지 번호
+
+BbsDAO dao = new BbsDAO();
+List<BbsDTO> bbsList = dao.getBbsListWithPaging(currentPage, pageSize);
+int totalCnt = dao.totalBbsCount();
+int totalPages = (int) Math.ceil((double) totalCnt / pageSize); // 전체 페이지 수
+%>
+
+<table border="1">
+    <tr>
+        <td colspan="6">게시판(페이징 적용)</td>
+    </tr>
+    <tr>
+        <td>제목</td>
+        <td>회원ID</td>
+        <td>회원명</td>
+        <td>내용</td>
+        <td>등록일</td>
+        <td>조회수</td>
+    </tr>
+    <c:set var="bbsList" value="<%=bbsList %>"/>
+ 
+	    <c:forEach items="${bbsList}" var="bbsElement">
+		    <tr>
+		    	<td>${ bbsElement.getTitle()}</td>
+		    	<td>${ bbsElement.getMemberId()}</td>
+		    	<td>${ bbsElement.getName()}</td>
+		    	<td>${ bbsElement.getContent()}</td>
+		    	<td>${ bbsElement.getRegDate()}</td>
+		    	<td>${ bbsElement.getReadCnt()}</td>
+		   </tr>	
+		</c:forEach>
+    
+
+    <!-- 페이지 번호 출력 -->
+    <tr>
+    	<td colspan="6">
+			<div style="text-align: center;">
+			    <%
+			        for (int i = 1; i <= totalPages; i++) {
+			    %>
+			        <a style="text-decoration:none"href="?page=<%=i%>"><%=i%></a> 
+			    <%
+			        }
+			    %>
+			</div>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

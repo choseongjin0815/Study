@@ -1,0 +1,70 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces = "true" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>JSTL - Formatting 태그</h2>
+
+<h3>숫자 포맷 지정</h3>
+<c:set var="num1" value="1234567"/>
+<fmt:formatNumber var="price" value="${num1}" type="currency"/>
+<fmt:formatNumber var="pro" value="0.05" type="percent"/>
+<ul>
+	<li>콤마 표시 : <fmt:formatNumber value="${num1}"/></li>
+	<li>콤마 표시 안함 : <fmt:formatNumber value="${num1}" groupingUsed="false"/></li>
+	<li>통화 : ${price }</li>
+	<li>퍼센트 : ${pro }</li>
+</ul>
+
+<h3>날짜와 시간 포맷 지정</h3>
+<c:set var="currentDate" value="<%= new java.util.Date() %>"/>
+<ul>
+	<li>날짜만 출력 : <fmt:formatDate value="${currentDate}" pattern="yyyy-MM-dd"/></li>
+	<li>시간만 출력 : <fmt:formatDate value="${currentDate}" pattern="HH:mm:ss"/></li>
+	<li>년-월-일 시:분:초 : <fmt:formatDate value="${currentDate}" pattern="yyyy-MM-dd HH:mm:ss"/></li>
+	<li>기본 날짜 형식 : <fmt:formatDate value="${currentDate}" type="date" dateStyle="full"/></li>
+	<li>mm패턴 : <fmt:formatDate value="${currentDate}" pattern="mm"/></li>
+	<li>기본 시간 형식 : <fmt:formatDate value="${currentDate}" type="time" timeStyle="long"/></li>
+</ul>
+
+<h4>문자열을 숫자로 변경</h4>
+<c:set var="num2" value="1234567.89"/>
+<fmt:parseNumber var="strNum2" value="${num2 }" pattern="00,000.00"/>
+<fmt:parseNumber var="strNum3" value="${num2 }" integerOnly="true"/>
+<fmt:parseNumber var="strNum4" value="${num2 }" pattern=".00"/>
+<ul>
+	<li>소수점까지 출력 : ${strNum2 }</li>
+	<li>정수만 출력 : ${strNum3 }</li>
+	<li>소수점만 출력 : ${strNum4 }</li>
+</ul>
+---------------------------------------------------------------
+
+<c:set var="todayDate" value="<%=new java.util.Date()%>"/>
+<p>Fmt Date : <fmt:formatDate value="${todayDate}" pattern="yyyy년 MM월 dd일" /></p>
+<p>Fmt Date : <fmt:formatDate value="${todayDate}" pattern="yyyy MM dd"/></p>
+<br/>
+<p>Fmt full Date : <fmt:formatDate value="${todayDate}" dateStyle="full" type="both"/></p>
+<p>Fmt long Date : <fmt:formatDate value="${todayDate}" dateStyle="long" type="both"/></p>
+<p>Fmt medium Date : <fmt:formatDate value="${todayDate}" dateStyle="medium" type="both"/></p>
+<p>Fmt short Date : <fmt:formatDate value="${todayDate}" dateStyle="short" type="both"/></p>
+<br/>
+<p>Fmt full Date : <fmt:formatDate value="${todayDate}" dateStyle="full" /></p>
+<p>Fmt long Date : <fmt:formatDate value="${todayDate}" dateStyle="long" /></p>
+<p>Fmt medium Date : <fmt:formatDate value="${todayDate}" dateStyle="medium" /></p>
+<p>Fmt short Date : <fmt:formatDate value="${todayDate}" dateStyle="short"/></p>
+<br>
+<p>Fmt full Date : <fmt:formatDate value="${todayDate}" dateStyle="full" type="both"/></p>
+<p>Fmt pattern Date : <fmt:formatDate value="${todayDate}" pattern="yyyy-MM-dd HH:mm:ss" type="both"/></p>
+<p>Fmt yyyy Date : <fmt:formatDate value="${todayDate}" pattern="yyyy" type="both"/></p>
+<p>Fmt MM Date : <fmt:formatDate value="${todayDate}" pattern="MM" type="both"/></p>
+<p>Fmt DD Date : <fmt:formatDate value="${todayDate}" pattern="dd" type="both"/></p>
+
+</body>
+</html>

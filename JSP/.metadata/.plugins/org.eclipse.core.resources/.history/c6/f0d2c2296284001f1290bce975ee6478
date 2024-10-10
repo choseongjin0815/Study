@@ -1,0 +1,20 @@
+<%@page import="net.fullstack7.member.MemberDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces = "true" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>List 컬렉션</h2>
+<%
+List<MemberDTO> member = new ArrayList<>();
+member.add("")
+%>
+</body>
+</html>

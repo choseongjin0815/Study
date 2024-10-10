@@ -1,0 +1,106 @@
+<%@page import="net.fullstack7.bbs.BbsDTO"%>
+<%@page import="net.fullstack7.bbs.BbsDAO"%>
+<%@page import="java.util.List"%>
+<%@page import="net.fullstack7.member.MemberDTO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ page trimDirectiveWhitespaces = "true" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시판</title>
+</head>
+<body>
+<%
+int pageSize = 5;
+int pagesPerBoard = 5;
+int boardCnt = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) / pagesPerBoard : 0;
+int currentPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1;
+if (currentPage % pagesPerBoard == 0) {
+    boardCnt -= 1;
+}
+int startPages = boardCnt * pagesPerBoard + 1;
+int lastPages = startPages + pagesPerBoard - 1;
+
+// 검색 관련 변수
+String searchCategory = request.getParameter("search_category");
+String searchWord = request.getParameter("search_word") != null ? request.getParameter("search_word") : "";
+
+// DAO 호출
+BbsDAO dao = new BbsDAO();
+List<BbsDTO> bbsList = dao.getBbsListWithPagingAndSearch(currentPage, pageSize, searchCategory, searchWord);
+//List<BbsDTO> bbsList = dao.getBbsListWithPaging(currentPage, pageSize);
+int totalCnt = dao.totalBbsCount();
+int totalPages = (int) Math.ceil((double) totalCnt / pageSize);
+%>
+
+<table border="1">
+    <tr>
+        <td colspan="6">
+        게시판(페이징 적용)
+        <button id="login_btn" onclick="login()">로그인</button>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="6">
+            <form id="frmSearch" method="get">
+                <select name="search_category" id="search_category">
+                    <option value="" <%= (searchCategory != null && searchCategory.equals("") ? "selected" : "") %>>선택</option>
+                    <option value="title" <%= (searchCategory != null && searchCategory.equals("title") ? "selected" : "") %>>제목</option>
+                    <option value="content" <%= (searchCategory != null && searchCategory.equals("content") ? "selected" : "") %>>내용</option>
+                    <option value="name" <%= (searchCategory != null && searchCategory.equals("memberId") ? "selected" : "") %>>작성자</option>
+                </select>
+                <input type="text" name="search_word" id="search_word" value="<%= searchWord %>" maxlength="100">
+                <input type="submit" name="btn_search" id="btn_search" value="검색하기">
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>제목</td>
+        <td>회원ID</td>
+        <td>회원명</td>
+        <td>내용</td>
+        <td>등록일</td>
+        <td>조회수</td>
+    </tr>
+    <c:set var="bbsList" value="<%=bbsList %>"/>
+    <c:forEach items="${bbsList}" var="bbsElement">
+        <tr>
+            <td>${bbsElement.title}</td>
+            <td>${bbsElement.getMemberId()}</td>
+            <td>${bbsElement.getName()}</td>
+            <td>${bbsElement.getContent()}</td>
+            <td>${bbsElement.getRegDate()}</td>
+            <td>${bbsElement.getReadCnt()}</td>
+        </tr>
+    </c:forEach>
+    <!-- 페이지 번호 출력 -->
+    <tr>
+        <td colspan="6">
+            <div style="display: flex; justify-content: space-evenly; align-items: center;">
+                <a href="?page=<%=startPages - 1%>&search_category=<%=searchCategory%>&search_word=<%=searchWord%>"><button>이전</button></a>
+                <div style="text-align: center;">
+                    <c:forEach var="i" begin="<%=startPages %>" end="<%=lastPages %>" step="1">
+                        <a style="text-decoration:none" href="?page=${i }&search_category=<%=searchCategory%>&search_word=<%=searchWord%>">${i }</a>
+                    </c:forEach>
+                </div>
+                <a href="?page=<%=lastPages + 1%>&search_category=<%=searchCategory%>&search_word=<%=searchWord%>"><button>다음</button></a>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script>
+function login(){
+	const login = document.querySelector("#login_btn");
+	login.addEventListener('click', ()=>{
+		location.href = "../login/login.jsp";
+	});
+	
+}
+	
+</script>
+</body>
+</html>

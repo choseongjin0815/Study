@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces = "true" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>JSTL -url 태그</h2>
+<c:set var="param1" value="request파라미터" scope="request"/>
+<c:url var="url" value="./in_page.jsp?p3=4">
+	<c:param name="p1" value="내부변수1"/>
+	<c:param name="p2" value="내부변수2"/>
+</c:url>
+<a href="${url }">url태그 사용하기</a>
+</body>
+</html>

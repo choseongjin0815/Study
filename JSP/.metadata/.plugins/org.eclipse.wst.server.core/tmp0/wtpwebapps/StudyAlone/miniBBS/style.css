@@ -1,0 +1,17 @@
+@charset "UTF-8";
+header { 
+	color : red;
+	font-size : 30px;
+	text-align : center;
+	background-color : blue;
+}
+main{
+	width : 30%;
+	height : 50%;
+	
+}
+#wrapper { 
+	background-color : blue;
+	width : 90%;
+	height : 30%;
+}

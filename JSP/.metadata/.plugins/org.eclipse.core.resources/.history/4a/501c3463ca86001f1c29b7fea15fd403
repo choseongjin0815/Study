@@ -1,0 +1,31 @@
+package net.fullstack7.test;
+
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import net.fullstack7.member.MemberDAO;
+
+import java.io.IOException;
+
+
+@WebServlet("/Member")
+public class Member extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	MemberDAO dao;
+	public void init(ServletConfig config) throws ServletException {
+		dao = new MemberDAO();
+	}
+
+	
+	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		String adminId = this.getInitParameter("adminId");
+	}
+	
+	public void destroy() {
+		
+	}
+
+}

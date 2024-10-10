@@ -1,0 +1,62 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces = "true" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>표현언어(EL) - 연산자</h2>
+<h3>변수</h3>
+
+<%!
+String name = "홍길동";
+String memberId = "user1";
+String gender = "여성";
+
+int num1 = 10;
+int num2 = 20;
+int num3 = 30;
+int num4 = 40;
+int num5 = 50;
+%>
+<%
+pageContext.setAttribute("name", name); // EL은 스크립틀릿에서  정의한 변수 바로 가져다 쓰지 못하므로
+pageContext.setAttribute("memberId", memberId);
+pageContext.setAttribute("gender", gender);
+
+pageContext.setAttribute("num1", num1);
+pageContext.setAttribute("num2", num2);
+pageContext.setAttribute("num3", num3);
+pageContext.setAttribute("num4", num4);
+%>
+
+<ul>
+	<li>이름 : ${name}</li>
+	<li>아이디 : ${memberId}</li>
+	<li>성별 : ${gender}</li>
+</ul>
+
+<h3>변수 선언 및 할당</h3>
+<ul>
+	<li>스크립틀리셍서 선언 : ${num5}</li>
+	<li>pageContext 선언 : ${num1}</li>
+	<li>num1 변수 할당과 동시에 출력 선언 : ${num1 = 11}</li>
+	<li>num2 변수 할당만 출력은 안함 : ${num2 = 21;'' }</li>
+	<li>num2 변수 할당 후 출력 : ${num2}</li>
+	<li>num1=${num1}, num2=${num2}, num3=${num3}, num4=${num4}, </li>
+</ul>
+<h3>산술연산자</h3>
+<ul>
+	<li>num1 + num2 = ${num1+num2 }</li>
+	<li>num1 - num2 = ${num1-num2 }</li>
+	<li>num1 * num2 = ${num1*num2 }</li>
+	<li>num1 / num2 = ${num1/num2 }</li>
+	<li>num1 div num4 = ${num4 div num1 }</li>
+	<li>num1 % num4 = ${num1%num4 }</li>
+	<li>num3 mod num4 = ${num3 mod num4}</li>
+</ul>
+</body>
+</html>

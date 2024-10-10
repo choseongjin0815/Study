@@ -1,0 +1,40 @@
+package net.fullstack7.bbs;
+import java.sql.*;
+import java.time.LocalDateTime;
+import java.util.*;
+import net.fullstack7.common.DBConnPool;
+import net.fullstack7.member.MemberDTO;
+
+public class BbsDAO {
+	DBConnPool dbcp = new DBConnPool();
+	
+	public Map<BbsDTO, MemberDTO> bbsList() {
+		Map<BbsDTO, MemberDTO> bbsList = new HashMap<BbsDTO, MemberDTO>();
+		String sql = "SELECT title, memberId, MB.name, content, regDate, readCnt "
+				+ "FROM tbl_bbs AS TB "
+				+ "INNER JOIN tbl_member AS MB ON TB.memberId = MB.memberId";
+		try {
+			PreparedStatement psmt = dbcp.con.prepareStatement(sql);
+			ResultSet rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				MemberDTO mDto = new MemberDTO();
+				BbsDTO bDto = new BbsDTO();
+				bDto.setTitle(rs.getString(1));
+				bDto.setMemberId(rs.getString(2));
+				mDto.setName(rs.getString(3));
+				bDto.setContent(rs.getString(4));
+				bDto.setRegDate(rs.getObject("regDate", LocalDateTime.class));
+				bDto.setReadCnt(rs.getInt(6));
+				
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("게시판 조회에 실패하였습니다.");
+		}
+		
+		
+		return bbsList;
+	}
+}

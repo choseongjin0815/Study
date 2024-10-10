@@ -1,0 +1,80 @@
+<%@page import="net.fullstack7.bbs.BbsDTO"%>
+<%@page import="net.fullstack7.bbs.BbsDAO"%>
+<%@page import="java.util.List"%>
+<%@page import="net.fullstack7.member.MemberDTO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ page trimDirectiveWhitespaces = "true" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+int pageSize = 5; // 한 페이지에 보여줄 게시글 수
+int pagesPerBoard = 5; //노출될 페이지의 수
+//boardCnt 몇번째 보드인지 pagesPerBoard가 5라면 6페이지~10페이지 boardCnt = 2
+int boardCnt = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) / pagesPerBoard : 0;
+
+int currentPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1; // 현재 페이지 번호
+//현재 페이지가 pagesPerBoard로 나누어 떨어진다면 boardCnt가 하나 늘어나므로 줄여줌
+if(currentPage % pagesPerBoard == 0){
+	boardCnt -= 1;
+}
+int startPages = boardCnt * pagesPerBoard + 1; //게시판 아래에 노출될 페이지들의 시작 페이지 번호
+int lastPages = startPages + pagesPerBoard - 1; //게시판 아래에 노출될 페이지들의 마지막 페이지 번호
+BbsDAO dao = new BbsDAO();
+List<BbsDTO> bbsList = dao.getBbsListWithPaging(currentPage, pageSize);
+int totalCnt = dao.totalBbsCount();
+int totalPages = (int) Math.ceil((double) totalCnt / pageSize); // 전체 페이지 수
+%>
+
+<table border="1">
+    <tr>
+        <td colspan="6">게시판(페이징 적용)</td>
+    </tr>
+    <tr>
+        <td>제목</td>
+        <td>회원ID</td>
+        <td>회원명</td>
+        <td>내용</td>
+        <td>등록일</td>
+        <td>조회수</td>
+    </tr>
+    <c:set var="bbsList" value="<%=bbsList %>"/>
+ 
+	    <c:forEach items="${bbsList}" var="bbsElement">
+		    <tr>
+		    	<td>${ bbsElement.getTitle()}</td>
+		    	<td>${ bbsElement.getMemberId()}</td>
+		    	<td>${ bbsElement.getName()}</td>
+		    	<td>${ bbsElement.getContent()}</td>
+		    	<td>${ bbsElement.getRegDate()}</td>
+		    	<td>${ bbsElement.getReadCnt()}</td>
+		   </tr>	
+		</c:forEach>
+    
+
+    <!-- 페이지 번호 출력 -->
+    <tr>
+    	<td colspan="6">
+    		<div style="display: flex; justify-content: ; align-items: center;">
+	    		<button>이전</button>
+				<div style="text-align: center;">
+					<c:forEach var="i" begin="<%=startPages %>" end="<%=lastPages %>" step="1">
+						<a style="text-decoration:none"href="?page=${i }">${i }</a> 
+					</c:forEach>
+	
+				</div>
+				<button>다음</button>
+			</div>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

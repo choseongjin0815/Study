@@ -1,0 +1,82 @@
+package net.fullstack7.bbs;
+import java.sql.*;
+import java.time.LocalDateTime;
+import java.util.*;
+import net.fullstack7.common.DBConnPool;
+import net.fullstack7.member.MemberDTO;
+
+public class BbsDAO {
+    DBConnPool dbcp = new DBConnPool();
+    private PreparedStatement psmt = null;
+    private ResultSet rs = null;
+
+    // 기존 메서드들...
+
+    // 자원 해제 메서드
+    public void close() {
+        try {
+            if (rs != null) rs.close(); // ResultSet 닫기
+            if (psmt != null) psmt.close(); // PreparedStatement 닫기
+            if (dbcp != null) dbcp.close(); // DB 연결 닫기 (DBConnPool에서 close() 지원 시)
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<BbsDTO> getBbsListWithPaging(int currentPage, int pageSize) {
+        List<BbsDTO> bbsList = new ArrayList<BbsDTO>();
+        String sql = "SELECT title, TB.memberId, MB.name, content, TB.regDate, readCnt "
+                   + "FROM tbl_bbs AS TB "
+                   + "INNER JOIN tbl_member AS MB ON TB.memberId = MB.memberId "
+                   + "ORDER BY TB.regDate DESC "
+                   + "LIMIT ? OFFSET ?";
+        
+        try {
+            psmt = dbcp.con.prepareStatement(sql);
+            
+            // LIMIT과 OFFSET 설정
+            psmt.setInt(1, pageSize);
+            psmt.setInt(2, (currentPage - 1) * pageSize);
+            
+            rs = psmt.executeQuery();
+            
+            while (rs.next()) {
+                BbsDTO bDto = new BbsDTO();
+                bDto.setTitle(rs.getString(1));
+                bDto.setMemberId(rs.getString(2));
+                bDto.setName(rs.getString(3));
+                bDto.setContent(rs.getString(4));
+                bDto.setRegDate(rs.getObject("regDate", LocalDateTime.class));
+                bDto.setReadCnt(rs.getInt(6));
+                bbsList.add(bDto);
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("게시판 조회에 실패하였습니다.");
+        } finally {
+            close(); // 자원 해제
+        }
+        
+        return bbsList;
+    }
+
+    public int totalBbsCount() {
+        String sql = "SELECT COUNT(*) FROM tbl_bbs";
+        int totalCnt = 0;
+        try {
+            psmt = dbcp.con.prepareStatement(sql);
+            rs = psmt.executeQuery();
+            
+            if (rs.next()) {
+                totalCnt = rs.getInt(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("게시물 개수 불러오기 실패");
+        } finally {
+            close(); // 자원 해제
+        }
+        return totalCnt;
+    }
+}

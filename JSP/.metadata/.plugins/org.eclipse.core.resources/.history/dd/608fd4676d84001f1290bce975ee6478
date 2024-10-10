@@ -1,0 +1,11 @@
+package net.fullstack7.utils;
+
+public class TestUtils {
+	public static boolean isNumersic() {
+		return true;
+	}
+	
+	public static int getStringToInt(String param)P{
+		
+	}
+}

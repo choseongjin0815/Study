@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<booklist>
+	<book>
+		<name>사피엔스</name>
+		<author>유발 하라리</author>
+		<price>19800</price>
+	</book>
+	<book>
+		<name>성낙현의 JSP</name>
+		<author>성낙현</author>
+		<price>20000</price>
+	</book>
+</booklist>
