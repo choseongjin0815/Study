@@ -23,6 +23,22 @@
         color : lightblue;
         text-decoration: none;
       }
+
+      div > p {
+        color : red;
+      }
+
+      div > p > span {
+        color :blue;
+      }
+
+      p + div {
+        font-size : 100px;
+
+      }
+      p ~ h1 {
+        color : darkblue;
+      }
     </style>
     <title>Document</title>
 </head>
@@ -35,7 +51,18 @@
 
     <a href="https://www.naver.com">네이버링크</a>
 
-    
+    <div>
+        1
+        <p>
+            2
+            <span>3</span>
+        </p>
+        <div>
+            5
+        </div>
+
+        <h1>2323211</h1>
+    </div>
     
 </body>
 </html>
