@@ -1,0 +1,27 @@
+{{>layouts/header}}
+{{#msg}}
+    <div class="alert alert-primary alert-dismissible">
+        {{msg}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{{/msg}}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">email</th>
+        <th scope="col">pwd</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#members}}
+        <tr>
+            <th>{{id}}</th>
+            <td><a href="/member/{{id}}">{{email}}</a></td>
+            <td>{{pwd}}</td>
+        </tr>
+    {{/members}}
+    </tbody>
+</table>
+<a href="/member/regist">회원가입</a>
+{{>layouts/footer}}
