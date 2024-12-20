@@ -1,0 +1,22 @@
+{{>layouts/header}}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>{{employee.id}}</th>
+            <td>{{employee.name}}</td>
+            <td>{{employee.age}}</td>
+        </tr>
+    </tbody>
+</table>
+<a href="/employee">Back</a>
+<a href="/employee/edit/{{employee.id}}" class="btn btn-primary">Edit</a>
+<a href="/employee/delete/{{employee.id}}" class="btn btn-danger">삭제</a>
+{{>layouts/footer}}

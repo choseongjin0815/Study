@@ -1,0 +1,23 @@
+{{>layouts/header}}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#empList}}
+        <tr>
+            <th>{{id}}</th>
+            <td><a href="/employee/{{id}}">{{name}}</a></td>
+            <td>{{age}}</td>
+        </tr>
+    {{/empList}}
+    </tbody>
+</table>
+
+<a href="/employee/new">사원등록</a>
+
+{{>layouts/footer}}

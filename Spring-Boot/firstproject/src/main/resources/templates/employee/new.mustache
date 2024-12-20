@@ -1,0 +1,17 @@
+{{>layouts/header}}
+<form class="container" action="/employee/addEmployee" method="post">
+    <div class="mb-3">
+        <label class="form-label">이름</label>
+        <input type="text" class="form-control" name="name">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">나이</label>
+        <input type="text" class="form-control" name="age">
+    </div>
+
+    <button type="submit" class="btn btn-primary">등록</button>
+    <a href="/employee">Back</a>
+</form>
+
+{{>layouts/footer}}

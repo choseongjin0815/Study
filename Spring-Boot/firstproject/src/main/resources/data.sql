@@ -5,3 +5,11 @@ INSERT INTO article(title, content) VALUES('다다다다', '3333');
 INSERT INTO member(email, pwd) VALUES('ijn10000@naver.com', '1111');
 INSERT INTO member(email, pwd) VALUES('okm10000@naver.com', '2222');
 INSERT INTO member(email, pwd) VALUES('chobocho0815@gmail.com', '3333');
+
+
+INSERT INTO employee(name, age) VALUES('가가가', 26);
+INSERT INTO employee(name, age) VALUES('아아아', 33);
+INSERT INTO employee(name, age) VALUES('다다다', 41);
+INSERT INTO employee(name, age) VALUES('바바바', 22);
+INSERT INTO employee(name, age) VALUES('카카카', 55);
+INSERT INTO employee(name, age) VALUES('마마마', 23);

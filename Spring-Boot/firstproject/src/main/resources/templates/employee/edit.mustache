@@ -1,0 +1,18 @@
+{{>layouts/header}}
+<form class="container" action="/employee/update" method="post">
+    <input type="hidden" name="id" value="{{employee.id}}">
+    <div class="mb-3">
+        <label class="form-label">이름</label>
+        <input type="text" class="form-control" name="name" value="{{employee.name}}">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">나이</label>
+        <textarea rows="3" class="form-control" name="age" >{{employee.age}}</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">수정</button>
+    <a href="/employee/{{employee.id}}">Back</a>
+</form>
+
+{{>layouts/footer}}
