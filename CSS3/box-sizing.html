@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .bBox {
+            box-sizing: border-box;
+            border-radius : 20px;
+            background-color: blue;
+            border : 5px dashed black;
+            width : 300px;
+            height : 200px;
+            padding : 20px;
+            margin : 30px
+        }
+
+        .cBox {
+            box-sizing: content-box;
+            background-color: red;
+            border-radius: 5px 15px 30px 50px;
+            border : 2px solid black;
+            width : 300px;
+            height : 200px;
+            padding : 20px;
+            margin : 30px
+        }
+    </style>
+
+</head>
+border-box는 w,h + 2 * (m)
+<br>
+content-box는 w,h + 2 * (m+b+p)
+
+<body>
+    <div class="bBox">border-box</div>
+
+    <div class="cBox">content-box</div>
+</body>
+</html>
