@@ -74,7 +74,6 @@ public class EmployeeController {
         if(target != null){
             employeeRepository.save(empEnt);
         }
-
         return "redirect:/employee/" + empEnt.getId();
     }
 
