@@ -23,7 +23,7 @@ public class MemberEntity { //table 역할
     @Column
     private String memberName;
 
-
+//##
 
 
 
