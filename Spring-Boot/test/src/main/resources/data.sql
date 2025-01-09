@@ -1,0 +1,1 @@
+INSERT INTO MemberEntity(memberEmail, memberPassword, memberName) VALUES("dd","22","홍길동")
