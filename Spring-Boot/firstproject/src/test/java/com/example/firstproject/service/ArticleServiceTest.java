@@ -148,7 +148,7 @@ class ArticleServiceTest {
         Article expected = null;
         //2.실제 데이터
         Article article = articleService.delete(id);
-        //3. 비교 및 검증
+
         assertEquals(expected, article);
     }
 }
