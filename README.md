@@ -1,6 +1,6 @@
 # 📖 Study Repository
  
-공부 기록용 공간
+공부 기록
 
 ---     
 
