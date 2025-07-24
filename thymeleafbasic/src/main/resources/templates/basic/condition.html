@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>username</th>
+            <th>age</th>
+        </tr>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.username}" th:if="${user.age lt 21}"></td>
+            <td th:text="${user.age}"th:if="${user.age lt 21}"></td>
+        </tr>
+
+    </table>
+</body>
+</html>
