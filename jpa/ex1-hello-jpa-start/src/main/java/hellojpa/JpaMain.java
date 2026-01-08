@@ -41,28 +41,28 @@ public class JpaMain {
 //            System.out.println("=========================");
 
             //저장
-            Team team = new Team();
-            team.setName("Team 1");
-            em.persist(team);
-
-            Member member = new Member();
-            member.setUsername("member1");
-            member.setTeam(team);
-            em.persist(member);
+//            Team team = new Team();
+//            team.setName("Team 1");
+//            em.persist(team);
+//
+//            Member member = new Member();
+//            member.setUsername("member1");
+//            member.setTeam(team);
+//            em.persist(member);
 
 
             //team.getMembers().add(member);//양방향 연관관계에서는 값을 양쪽 다 넣어주는게 좋음
 
             //해줘야 디비에서 값을 깔끔하게 가져옴
-            em.flush();
-            em.clear();
-
-            Team findTeam = em.find(Team.class, team.getId());
-            List<Member> findMembers = findTeam.getMembers();
-
-            for (Member m : findMembers) {
-                System.out.println("m=" + m.getUsername());
-            }
+//            em.flush();
+//            em.clear();
+//
+//            Team findTeam = em.find(Team.class, team.getId());
+//            List<Member> findMembers = findTeam.getMembers();
+//
+//            for (Member m : findMembers) {
+//                System.out.println("m=" + m.getUsername());
+//            }
 
 
 
