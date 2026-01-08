@@ -63,6 +63,19 @@ public class JpaMain {
 //            for (Member m : findMembers) {
 //                System.out.println("m=" + m.getUsername());
 //            }
+//
+//            Movie movie = new Movie();
+//            movie.setDirector("aaaa");
+//            movie.setActor("bbbb");
+//            movie.setName("aaaa");
+//            movie.setPrice(123);
+//
+//            em.persist(movie);
+//
+//            em.flush();
+//            em.clear();
+//
+//            Movie findMovie = em.find(Movie.class, movie.getId());
 
 
 
