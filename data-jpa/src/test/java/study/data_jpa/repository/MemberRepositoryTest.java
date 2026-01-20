@@ -240,10 +240,35 @@ class MemberRepositoryTest {
 
         //when
         List<Member> findMember = memberRepository.findLockByUsername("memberA"); //변경감지 체크 안함
-        
+
 
         em.flush();
+    }
 
+    @Test
+    public void callCustom() {
+        List<Member> result = memberRepository.findMemberCustom();
+    }
 
+    @Test
+    public void nativeQuery() {
+        Team teamA = new Team("teamA");
+        em.persist(teamA);
+
+        Member m1 = new Member("member1", 10, teamA);
+        Member m2 = new Member("member2", 10, teamA);
+        em.persist(m1);
+        em.persist(m2);
+
+        em.flush();
+        em.clear();
+
+        Page<MemberProjection> result = memberRepository.findByNativeProjection(PageRequest.of(0, 10));
+
+        List<MemberProjection> content = result.getContent();
+        for(MemberProjection memberProjection : content) {
+            System.out.println("memberProjection: " + memberProjection.getUsername());
+            System.out.println("memberProjection: " + memberProjection.getTeamName());
+        }
     }
 }
