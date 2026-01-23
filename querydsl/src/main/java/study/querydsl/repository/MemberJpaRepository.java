@@ -49,6 +49,7 @@ public class MemberJpaRepository {
         return queryFactory
                 .selectFrom(member)
                 .fetch();
+
     }
 
     public List<Member> findByUsername(String username) {
